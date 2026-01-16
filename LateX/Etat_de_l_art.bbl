@@ -1,0 +1,1554 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{huangIndoorPositioningSystems2023}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=b9bbea1d930af6d00a84c21d41281b33}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Jiahao},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e1adb6c43e8e63af32992f836bfe0f20}{%
+           family={Junginger},
+           familyi={J\bibinitperiod},
+           given={Steffen},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c2969289c79bfb5f2bd68129932f963b}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Hui},
+           giveni={H\bibinitperiod}}}%
+        {{hash=2f3036a53fcc06dc96316c6fab0fc971}{%
+           family={Thurow},
+           familyi={T\bibinitperiod},
+           given={Kerstin},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{14daf46ed6ab488a57cdbaf311bc6c72}
+      \strng{fullhash}{629f983d88d02e4a1cb2ffd45938b78f}
+      \strng{fullhashraw}{629f983d88d02e4a1cb2ffd45938b78f}
+      \strng{bibnamehash}{14daf46ed6ab488a57cdbaf311bc6c72}
+      \strng{authorbibnamehash}{14daf46ed6ab488a57cdbaf311bc6c72}
+      \strng{authornamehash}{14daf46ed6ab488a57cdbaf311bc6c72}
+      \strng{authorfullhash}{629f983d88d02e4a1cb2ffd45938b78f}
+      \strng{authorfullhashraw}{629f983d88d02e4a1cb2ffd45938b78f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Recently, with the in-depth development of Industry 4.0 worldwide, mobile robots have become a research hotspot. Indoor localization has become a key component in many fields and the basis for all actions of mobile robots. This paper screened 147 papers in the field of indoor positioning of mobile robots from 2019 to 2021. First, 12 mainstream indoor positioning methods and related positioning technologies for mobile robots are introduced and compared in detail. Then, the selected papers were summarized. The common attributes and laws were discovered. The development trend of indoor positioning of mobile robots is obtained.}
+      \field{day}{24}
+      \field{issn}{2218-6581}
+      \field{journaltitle}{Robotics}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{2}
+      \field{shortjournal}{Robotics}
+      \field{shorttitle}{Indoor {{Positioning Systems}} of {{Mobile Robots}}}
+      \field{title}{Indoor {{Positioning Systems}} of {{Mobile Robots}}: {{A Review}}}
+      \field{urlday}{17}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{12}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{47}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/robotics12020047
+      \endverb
+      \verb{file}
+      \verb /home/lois/Zotero/storage/USKVI6AZ/Huang et al. - 2023 - Indoor Positioning Systems of Mobile Robots A Review.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2218-6581/12/2/47
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2218-6581/12/2/47
+      \endverb
+    \endentry
+    \entry{retscherIndoorNavigationUser2022}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=009b2eb52975ba82721022d44aef5825}{%
+           family={Retscher},
+           familyi={R\bibinitperiod},
+           given={Günther},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{009b2eb52975ba82721022d44aef5825}
+      \strng{fullhash}{009b2eb52975ba82721022d44aef5825}
+      \strng{fullhashraw}{009b2eb52975ba82721022d44aef5825}
+      \strng{bibnamehash}{009b2eb52975ba82721022d44aef5825}
+      \strng{authorbibnamehash}{009b2eb52975ba82721022d44aef5825}
+      \strng{authornamehash}{009b2eb52975ba82721022d44aef5825}
+      \strng{authorfullhash}{009b2eb52975ba82721022d44aef5825}
+      \strng{authorfullhashraw}{009b2eb52975ba82721022d44aef5825}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A variety of positioning systems have emerged for indoor localization which are based on several system strategies, location methods, and technologies while using different signals, such as radio frequency (RF) signals. Demands regarding positioning in terms of performance, robustness, availability and positioning accuracies are increasing. The overall goal of indoor positioning is to provide GNSS-like functionality in places where GNSS signals are not available. Analysis of the state-of-the-art indicates that although a lot of work is being done to combine both the outdoor and indoor positioning systems, there are still many problems and challenges to be solved. Most people moving on the city streets and interiors of public facilities have a smartphone, and most professionals working in public facilities or construction sites are equipped with tablets or smartphone devices. If users already have the necessary equipment, they should be provided with further functionalities that will help them in day-to-day life and work. In this review study, user requirements and the state-of-the-art in system development for smartphone localization are discussed. In particular, localization with current and upcoming ‘signals-of-opportunity’ (SoP) for use in mobile devices is the main focus of this paper.}
+      \field{day}{27}
+      \field{issn}{2673-7418}
+      \field{journaltitle}{Geomatics}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{1}
+      \field{shortjournal}{Geomatics}
+      \field{title}{Indoor {{Navigation}}—{{User Requirements}}, {{State-of-the-Art}} and {{Developments}} for {{Smartphone Localization}}}
+      \field{urlday}{17}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{3}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 46}
+      \range{pages}{46}
+      \verb{doi}
+      \verb 10.3390/geomatics3010001
+      \endverb
+      \verb{file}
+      \verb /home/lois/Zotero/storage/Y7T423QM/Retscher - 2022 - Indoor Navigation—User Requirements, State-of-the-Art and Developments for Smartphone Localization.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2673-7418/3/1/1
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2673-7418/3/1/1
+      \endverb
+    \endentry
+    \entry{daiSurveyLatestWiFi2023}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=117ad0eafd4f0c151bfb24e4c2eefc5b}{%
+           family={Dai},
+           familyi={D\bibinitperiod},
+           given={Jihan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=795ae30ac5586734f6582f01f534a3a1}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Maoyi},
+           giveni={M\bibinitperiod}}}%
+        {{hash=3b95403e0ec3a7177e36161ee97e0df2}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Bochun},
+           giveni={B\bibinitperiod}}}%
+        {{hash=8a6139962445e42828b8802df56f1f35}{%
+           family={Shen},
+           familyi={S\bibinitperiod},
+           given={Jiajie},
+           giveni={J\bibinitperiod}}}%
+        {{hash=03d3e23852937fa39b0e34246c4ecd1d}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Xin},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{7cd83d0234b870bd16da4adf37c42e0d}
+      \strng{fullhash}{3b1698b60b96c08ef32ecc2b80063429}
+      \strng{fullhashraw}{3b1698b60b96c08ef32ecc2b80063429}
+      \strng{bibnamehash}{7cd83d0234b870bd16da4adf37c42e0d}
+      \strng{authorbibnamehash}{7cd83d0234b870bd16da4adf37c42e0d}
+      \strng{authornamehash}{7cd83d0234b870bd16da4adf37c42e0d}
+      \strng{authorfullhash}{3b1698b60b96c08ef32ecc2b80063429}
+      \strng{authorfullhashraw}{3b1698b60b96c08ef32ecc2b80063429}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{As the location-based service (LBS) plays an increasingly important role in real life, the topic of positioning attracts more and more attention. Under different environments and principles, researchers have proposed a series of positioning schemes and implemented many positioning systems. With widely deployed networks and massive devices, wireless fidelity (Wi-Fi) technology is promising in the field of indoor positioning. In this paper, we survey the authoritative or latest positioning schemes for Wi-Fi-assisted indoor positioning. To this end, we describe the problem and corresponding applications, as well as an overview of the alternative methods. Then, we classify and analyze Wi-Fi-assisted indoor positioning schemes in detail, as well as review related work. Furthermore, we point out open challenges and forecast promising directions for future work.}
+      \field{day}{18}
+      \field{issn}{1424-8220}
+      \field{journaltitle}{Sensors}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{18}
+      \field{shortjournal}{Sensors}
+      \field{title}{A {{Survey}} of {{Latest Wi-Fi Assisted Indoor Positioning}} on {{ Different Principles}}}
+      \field{urlday}{7}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{volume}{23}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{7961}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/s23187961
+      \endverb
+      \verb{file}
+      \verb /home/lois/Zotero/storage/7NU2VTI5/Dai et al. - 2023 - A Survey of Latest Wi-Fi Assisted Indoor Positioning on Different Principles.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/1424-8220/23/18/7961
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/1424-8220/23/18/7961
+      \endverb
+    \endentry
+    \entry{shangOverviewWiFiFingerprintingbased2022}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=2c3b3ff6dc9851f6c81263201b6eaa17}{%
+           family={Shang},
+           familyi={S\bibinitperiod},
+           given={Shuang},
+           giveni={S\bibinitperiod}}}%
+        {{hash=b1b9aaec28925cbdd6682c6c27ebe903}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Lixing},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{b9c9ffedc100138c9019e0178876d339}
+      \strng{fullhash}{b9c9ffedc100138c9019e0178876d339}
+      \strng{fullhashraw}{b9c9ffedc100138c9019e0178876d339}
+      \strng{bibnamehash}{b9c9ffedc100138c9019e0178876d339}
+      \strng{authorbibnamehash}{b9c9ffedc100138c9019e0178876d339}
+      \strng{authornamehash}{b9c9ffedc100138c9019e0178876d339}
+      \strng{authorfullhash}{b9c9ffedc100138c9019e0178876d339}
+      \strng{authorfullhashraw}{b9c9ffedc100138c9019e0178876d339}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Location-based services have attracted significant attention since the concept of Industry 4.0 was proposed and the ‘Internet +’ era began owing to its social and commercial value. Many scholars have attempted to introduce machine learning in indoor fingerprint positioning to improve indoor positioning accuracy, enhance system robustness, reduce costs, and improve the performance of indoor positioning methods. A comprehensive overview of indoor positioning technology, its methods, and classifications is provided. Furthermore, a detailed review of the application of WiFi fingerprinting and machine learning methods in indoor positioning is presented, and the advantages and disadvantages of these methods when applied to indoor positioning are analyzed. This study summarizes the difficulties and challenges encountered by indoor positioning and suggests development directions.}
+      \field{issn}{1751-8628, 1751-8636}
+      \field{journaltitle}{IET Communications}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{7}
+      \field{shortjournal}{IET Communications}
+      \field{title}{Overview of {{WiFi}} Fingerprinting‐based Indoor Positioning}
+      \field{urlday}{30}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{volume}{16}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{725\bibrangedash 733}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1049/cmu2.12386
+      \endverb
+      \verb{file}
+      \verb /home/lois/Zotero/storage/SQTMSLS5/Shang and Wang - 2022 - Overview of WiFi fingerprinting‐based indoor positioning.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/cmu2.12386
+      \endverb
+      \verb{url}
+      \verb https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/cmu2.12386
+      \endverb
+    \endentry
+    \entry{heWiFiFingerprintBasedIndoor2016}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=4c412890c14dc7051403ff4716120423}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Suining},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0176406658ac3445316050a72d4f60cc}{%
+           family={Chan},
+           familyi={C\bibinitperiod},
+           given={S.-H.\bibnamedelimi Gary},
+           giveni={S\bibinithyphendelim H\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{de5cce56a7eed4b0bd85fd02545d09d8}
+      \strng{fullhash}{de5cce56a7eed4b0bd85fd02545d09d8}
+      \strng{fullhashraw}{de5cce56a7eed4b0bd85fd02545d09d8}
+      \strng{bibnamehash}{de5cce56a7eed4b0bd85fd02545d09d8}
+      \strng{authorbibnamehash}{de5cce56a7eed4b0bd85fd02545d09d8}
+      \strng{authornamehash}{de5cce56a7eed4b0bd85fd02545d09d8}
+      \strng{authorfullhash}{de5cce56a7eed4b0bd85fd02545d09d8}
+      \strng{authorfullhashraw}{de5cce56a7eed4b0bd85fd02545d09d8}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The growing commercial interest in indoor locationbased services (ILBS) has spurred recent development of many indoor positioning techniques. Due to the absence of GPS (global positioning system) signal, many other signals have been proposed for indoor usage. Among them, Wi-Fi (802.11) emerges as a promising one due to the pervasive deployment of wireless LANs (WLANs). In particular, Wi-Fi fingerprinting has been attracting much attention recently because it does not require line-ofsight measurement of access points (APs) and achieves high applicability in complex indoor environment.}
+      \field{issn}{1553-877X}
+      \field{journaltitle}{IEEE Communications Surveys \& Tutorials}
+      \field{langid}{english}
+      \field{number}{1}
+      \field{shortjournal}{IEEE Commun. Surv. Tutorials}
+      \field{shorttitle}{Wi-{{Fi Fingerprint-Based Indoor Positioning}}}
+      \field{title}{Wi-{{Fi Fingerprint-Based Indoor Positioning}}: {{Recent Advances}} and {{Comparisons}}}
+      \field{urlday}{7}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{volume}{18}
+      \field{year}{2016}
+      \field{yeardivision}{spring}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{466\bibrangedash 490}
+      \range{pages}{25}
+      \verb{doi}
+      \verb 10.1109/COMST.2015.2464084
+      \endverb
+      \verb{file}
+      \verb /home/lois/Zotero/storage/N57DGVIY/He and Chan - 2016 - Wi-Fi Fingerprint-Based Indoor Positioning Recent Advances and Comparisons.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://ieeexplore.ieee.org/document/7174948/
+      \endverb
+      \verb{url}
+      \verb http://ieeexplore.ieee.org/document/7174948/
+      \endverb
+    \endentry
+    \entry{liuSurveyWirelessIndoor2007}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=c2969289c79bfb5f2bd68129932f963b}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Hui},
+           giveni={H\bibinitperiod}}}%
+        {{hash=67f055b8170de4924493b8b4c8f167da}{%
+           family={Darabi},
+           familyi={D\bibinitperiod},
+           given={Houshang},
+           giveni={H\bibinitperiod}}}%
+        {{hash=353655ef8df477d1f9b20b307f658a8f}{%
+           family={Banerjee},
+           familyi={B\bibinitperiod},
+           given={Pat},
+           giveni={P\bibinitperiod}}}%
+        {{hash=83f95dca7c81df3fe67380769eb0321c}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Jing},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{139886769503600276bca11a46937697}
+      \strng{fullhash}{bee442df7a4cf14775f5627bc0a9016d}
+      \strng{fullhashraw}{bee442df7a4cf14775f5627bc0a9016d}
+      \strng{bibnamehash}{139886769503600276bca11a46937697}
+      \strng{authorbibnamehash}{139886769503600276bca11a46937697}
+      \strng{authornamehash}{139886769503600276bca11a46937697}
+      \strng{authorfullhash}{bee442df7a4cf14775f5627bc0a9016d}
+      \strng{authorfullhashraw}{bee442df7a4cf14775f5627bc0a9016d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Wireless indoor positioning systems have become very popular in recent years. These systems have been successfully used in many applications such as asset tracking and inventory management. This paper provides an overview of the existing wireless indoor positioning solutions and attempts to classify different techniques and systems. Three typical location estimation schemes of triangulation, scene analysis, and proximity are analyzed. We also discuss location fingerprinting in detail since it is used in most current system or solutions. We then examine a set of properties by which location systems are evaluated, and apply this evaluation method to survey a number of existing systems. Comprehensive performance comparisons including accuracy, precision, complexity, scalability, robustness, and cost are presented.}
+      \field{issn}{1094-6977}
+      \field{journaltitle}{IEEE Transactions on Systems, Man and Cybernetics, Part C (Applications and Reviews)}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{number}{6}
+      \field{shortjournal}{IEEE Trans. Syst., Man, Cybern. C}
+      \field{title}{Survey of {{Wireless Indoor Positioning Techniques}} and {{Systems} }}
+      \field{urlday}{7}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{volume}{37}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1067\bibrangedash 1080}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1109/TSMCC.2007.905750
+      \endverb
+      \verb{urlraw}
+      \verb http://ieeexplore.ieee.org/document/4343996/
+      \endverb
+      \verb{url}
+      \verb http://ieeexplore.ieee.org/document/4343996/
+      \endverb
+    \endentry
+    \entry{bullmannComparison24GHz2020}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=1d803c496d01b4a50a98f98d75c9de86}{%
+           family={Bullmann},
+           familyi={B\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod}}}%
+        {{hash=70ca3a5b8dba35e6e8fd5c15c842e329}{%
+           family={Fetzer},
+           familyi={F\bibinitperiod},
+           given={Toni},
+           giveni={T\bibinitperiod}}}%
+        {{hash=f172d436f230c54b841ff95163e060ce}{%
+           family={Ebner},
+           familyi={E\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+        {{hash=9113630856b2b12ca93a4af22e24f6fd}{%
+           family={Ebner},
+           familyi={E\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5471a212c89918adce3b3d91fa286390}{%
+           family={Deinzer},
+           familyi={D\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+        {{hash=85979de2752376592d5547d712c5425f}{%
+           family={Grzegorzek},
+           familyi={G\bibinitperiod},
+           given={Marcin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{8240049294c3d7bade0310b70ac3edf9}
+      \strng{fullhash}{2b487f48cb477f3cbe657206b1a758b5}
+      \strng{fullhashraw}{2b487f48cb477f3cbe657206b1a758b5}
+      \strng{bibnamehash}{8240049294c3d7bade0310b70ac3edf9}
+      \strng{authorbibnamehash}{8240049294c3d7bade0310b70ac3edf9}
+      \strng{authornamehash}{8240049294c3d7bade0310b70ac3edf9}
+      \strng{authorfullhash}{2b487f48cb477f3cbe657206b1a758b5}
+      \strng{authorfullhashraw}{2b487f48cb477f3cbe657206b1a758b5}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{With the addition of the Fine Timing Measurement (FTM) protocol in IEEE 802.11-2016, a promising sensor for smartphone-based indoor positioning systems was introduced. FTM enables a Wi-Fi device to estimate the distance to a second device based on the propagation time of the signal. Recently, FTM has gotten more attention from the scientific community as more compatible devices become available. Due to the claimed robustness and accuracy, FTM is a promising addition to the often used Received Signal Strength Indication (RSSI). In this work, we evaluate FTM on the 2.4 GHz band with 20 MHz channel bandwidth in the context of realistic indoor positioning scenarios. For this purpose, we deploy a least-squares estimation method, a probabilistic positioning approach and a simplistic particle filter implementation. Each method is evaluated using FTM and RSSI separately to show the difference of the techniques. Our results show that, although FTM achieves smaller positioning errors compared to RSSI, its error behavior is similar to RSSI. Furthermore, we demonstrate that an empirically optimized correction value for FTM is required to account for the environment. This correction value can reduce the positioning error significantly.}
+      \field{day}{12}
+      \field{issn}{1424-8220}
+      \field{journaltitle}{Sensors}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{16}
+      \field{shortjournal}{Sensors}
+      \field{title}{Comparison of 2.4 {{GHz WiFi FTM-}} and {{RSSI-Based Indoor Positioning Methods}} in {{Realistic Scenarios}}}
+      \field{urlday}{7}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{volume}{20}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{4515}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/s20164515
+      \endverb
+      \verb{file}
+      \verb /home/lois/Zotero/storage/ARJFC729/Bullmann et al. - 2020 - Comparison of 2.4 GHz WiFi FTM- and RSSI-Based Indoor Positioning Methods in Realistic Scenarios.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/1424-8220/20/16/4515
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/1424-8220/20/16/4515
+      \endverb
+    \endentry
+    \entry{gentnerWiFiRTTIndoorPositioning2020}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=da7129d8afb347ecd4a11ebf353a0510}{%
+           family={Gentner},
+           familyi={G\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=2656eeb87829ea1f978bac0809fd56d9}{%
+           family={Ulmschneider},
+           familyi={U\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod}}}%
+        {{hash=fee58d1a903b65473c90bcc3ed1a2f99}{%
+           family={Kuehner},
+           familyi={K\bibinitperiod},
+           given={Isabel},
+           giveni={I\bibinitperiod}}}%
+        {{hash=a39bbea78cc1ec4d5cad07704f998f29}{%
+           family={Dammann},
+           familyi={D\bibinitperiod},
+           given={Armin},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Portland, OR, USA}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{b5b4f33e5a8c81049805da9a76f1be56}
+      \strng{fullhash}{c6b49d676ee816f5e26df4dfe701f738}
+      \strng{fullhashraw}{c6b49d676ee816f5e26df4dfe701f738}
+      \strng{bibnamehash}{b5b4f33e5a8c81049805da9a76f1be56}
+      \strng{authorbibnamehash}{b5b4f33e5a8c81049805da9a76f1be56}
+      \strng{authornamehash}{b5b4f33e5a8c81049805da9a76f1be56}
+      \strng{authorfullhash}{c6b49d676ee816f5e26df4dfe701f738}
+      \strng{authorfullhashraw}{c6b49d676ee816f5e26df4dfe701f738}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Global navigation satellite systems (GNSSs) can deliver very good position estimates under optimum conditions. However, especially in urban and indoor scenarios with severe multipath propagation and blocking of satellites by buildings the accuracy loss can be very large. Using WiFi for indoor positioning is a common approach because WiFi infrastructure is widely deployed. Recently the WiFi IEEE 802.11-2016 standard was released, which includes a fine timing measurement (FTM) protocol, more commonly known as WiFi-round-trip-time (WiFi-RTT) protocol, for WiFi ranging. This paper researches timing based positioning algorithms, in this case using WiFi-RTT distance estimates. Based on two measurement campaigns, in an antenna measurement chamber and in a typical indoor environment, a WiFi-RTT distance error model is derived. Both measurement campaigns show, that the distance is underestimated, hence, the estimated distance is lower than the true distance. The WiFiRTT distance error model is included in the likelihood function of a particle filter (PF) and the positioning performances is evaluated in an indoor scenario. These evaluations show clearly the possibility of using WiFi-RTT distance estimates for indoor positioning.}
+      \field{booktitle}{2020 {{IEEE}}/{{ION Position}}, {{Location}} and {{Navigation Symposium}} ({{PLANS}})}
+      \field{eventtitle}{2020 {{IEEE}}/{{ION Position}}, {{Location}} and {{Navigation Symposium}} ({{PLANS}})}
+      \field{isbn}{978-1-7281-0244-3}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{title}{{{WiFi-RTT Indoor Positioning}}}
+      \field{urlday}{30}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1029\bibrangedash 1035}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1109/PLANS46316.2020.9110232
+      \endverb
+      \verb{file}
+      \verb /home/lois/Zotero/storage/78HD7NSI/Gentner et al. - 2020 - WiFi-RTT Indoor Positioning.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/9110232/
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/9110232/
+      \endverb
+    \endentry
+    \entry{khoshrangbafExperimentalEvaluationIndoor2025}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=e3dbac6ced0a77a8dc5c16c49cabb83a}{%
+           family={Khoshrangbaf},
+           familyi={K\bibinitperiod},
+           given={Mina},
+           giveni={M\bibinitperiod}}}%
+        {{hash=aca9bf76e4a96e72e1adb92ee836859c}{%
+           family={Akram},
+           familyi={A\bibinitperiod},
+           given={Vahid\bibnamedelima Khalilpour},
+           giveni={V\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=9c5ce9ed24906b9549d994303bea48ca}{%
+           family={Challenger},
+           familyi={C\bibinitperiod},
+           given={Moharram},
+           giveni={M\bibinitperiod}}}%
+        {{hash=3d44e8844e183d2e4fbb8450ff940d46}{%
+           family={Dagdeviren},
+           familyi={D\bibinitperiod},
+           given={Orhan},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{91ee10805177daf0a68075b3f19cbbbd}
+      \strng{fullhash}{19e87d1d4788fd843eef992717380935}
+      \strng{fullhashraw}{19e87d1d4788fd843eef992717380935}
+      \strng{bibnamehash}{91ee10805177daf0a68075b3f19cbbbd}
+      \strng{authorbibnamehash}{91ee10805177daf0a68075b3f19cbbbd}
+      \strng{authornamehash}{91ee10805177daf0a68075b3f19cbbbd}
+      \strng{authorfullhash}{19e87d1d4788fd843eef992717380935}
+      \strng{authorfullhashraw}{19e87d1d4788fd843eef992717380935}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{High-precision indoor localization and tracking are essential requirements for the safe navigation and task execution of autonomous mobile robots. Despite the growing importance of mobile robots in various areas, achieving precise indoor localization remains challenging due to signal interference, multipath propagation, and complex indoor layouts. In this work, we present the first comprehensive study comparing the accuracy of Bluetooth low energy (BLE), WiFi, and ultra wideband (UWB) technologies for the indoor localization of mobile robots under various circumstances. In the performed experiments, the error margin of the WiFi-based systems reached 608.7 cm, which is not tolerable for most applications. As a commonly used technology in the existing tracking systems, the accuracy of BLE-based systems is at least 44.12\% better than that of WiFi-based systems. The error margin of the BLE-based system in tracking static and mobile robots was 191.7 cm and 340.1 cm, respectively. The experiments showed that even with a limited number of UWB anchors , the system provides acceptable accuracy for tracking the mobile robots. Using only four UWB beacons in an environment of about 431 m2 area, the maximum error margin of detected positions by the UWB-based tracking system remained below 13.1 cm and 28.9 cm on average for the static and mobile robots, respectively. This error margin is 88.05\% lower than that of the BLE-based system and 93.27\% lower than that of the WiFi-based system on average. The high tracking precision, the need for a lower number of anchors, and the decreasing hardware costs point out that UWB will be the dominating technology in indoor tracking systems in the near future.}
+      \field{day}{31}
+      \field{issn}{1424-8220}
+      \field{journaltitle}{Sensors}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{7}
+      \field{shortjournal}{Sensors}
+      \field{title}{An {{Experimental Evaluation}} of {{Indoor Localization}} in {{ Autonomous Mobile Robots}}}
+      \field{urlday}{24}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{volume}{25}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{2209}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/s25072209
+      \endverb
+      \verb{file}
+      \verb /home/lois/Zotero/storage/KK8EEXF9/Khoshrangbaf et al. - 2025 - An Experimental Evaluation of Indoor Localization in Autonomous Mobile Robots.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/1424-8220/25/7/2209
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/1424-8220/25/7/2209
+      \endverb
+    \endentry
+    \entry{sadowskiRSSIBasedIndoorLocalization2018}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=15af2fb884dde4ed824fbb1e236312cb}{%
+           family={Sadowski},
+           familyi={S\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=97e9ca0d1c05edce9ca101f11a8bc969}{%
+           family={Spachos},
+           familyi={S\bibinitperiod},
+           given={Petros},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{df650b71c98373e75c18abb69eb747bf}
+      \strng{fullhash}{df650b71c98373e75c18abb69eb747bf}
+      \strng{fullhashraw}{df650b71c98373e75c18abb69eb747bf}
+      \strng{bibnamehash}{df650b71c98373e75c18abb69eb747bf}
+      \strng{authorbibnamehash}{df650b71c98373e75c18abb69eb747bf}
+      \strng{authornamehash}{df650b71c98373e75c18abb69eb747bf}
+      \strng{authorfullhash}{df650b71c98373e75c18abb69eb747bf}
+      \strng{authorfullhashraw}{df650b71c98373e75c18abb69eb747bf}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In the era of smart cities, there are a plethora of applications where the localization of indoor environments is important, from monitoring and tracking in smart buildings to proximity marketing and advertising in shopping malls. The success of these applications is based on the development of a costefficient and robust real-time system capable of accurately localizing objects. In most outdoor localization systems, global positioning system (GPS) is used due to its ease of implementation and accuracy up to five meters. However, due to the limited space that comes with performing localization of indoor environments and the large number of obstacles found indoors, GPS is not a suitable option. Hence, accurately and efficiently locating objects is a major challenge in indoor environments. Recent advancements in the Internet of Things (IoT) along with novel wireless technologies can alleviate the problem. Small-size and cost-efficient IoT devices which use wireless protocols can provide an attractive solution. In this paper, we compare four wireless technologies for indoor localization: Wi-Fi (IEEE 802.11n-2009 at the 2.4 GHz band), Bluetooth low energy, Zigbee, and long-range wide-area network. These technologies are compared in terms of localization accuracy and power consumption when IoT devices are used. The received signal strength indicator (RSSI) values from each modality were used and trilateration was performed for localization. The RSSI data set is available online. The experimental results can be used as an indicator in the selection of a wireless technology for an indoor localization system following application requirements.}
+      \field{issn}{2169-3536}
+      \field{journaltitle}{IEEE Access}
+      \field{langid}{english}
+      \field{shortjournal}{IEEE Access}
+      \field{title}{{{RSSI-Based Indoor Localization With}} the {{Internet}} of {{ Things}}}
+      \field{urlday}{30}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{volume}{6}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{30149\bibrangedash 30161}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2018.2843325
+      \endverb
+      \verb{file}
+      \verb /home/lois/Zotero/storage/79HHEVXF/Sadowski and Spachos - 2018 - RSSI-Based Indoor Localization With the Internet of Things.pdf;/home/lois/Zotero/storage/QF8LQ7RB/Liu et al. - 2007 - Survey of Wireless Indoor Positioning Techniques and Systems.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/8371230/
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/8371230/
+      \endverb
+    \endentry
+    \entry{woolleyBluetoothDirectionFinding}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=e8c6a373800f1b63eb4ccf82744d3965}{%
+           family={Woolley},
+           familyi={W\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{e8c6a373800f1b63eb4ccf82744d3965}
+      \strng{fullhash}{e8c6a373800f1b63eb4ccf82744d3965}
+      \strng{fullhashraw}{e8c6a373800f1b63eb4ccf82744d3965}
+      \strng{bibnamehash}{e8c6a373800f1b63eb4ccf82744d3965}
+      \strng{authorbibnamehash}{e8c6a373800f1b63eb4ccf82744d3965}
+      \strng{authornamehash}{e8c6a373800f1b63eb4ccf82744d3965}
+      \strng{authorfullhash}{e8c6a373800f1b63eb4ccf82744d3965}
+      \strng{authorfullhashraw}{e8c6a373800f1b63eb4ccf82744d3965}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Bluetooth {{Direction Finding}}}
+      \verb{file}
+      \verb /home/lois/Zotero/storage/6PR84AZ6/Woolley - Bluetooth Direction Finding.pdf
+      \endverb
+    \endentry
+    \entry{milanoBLEBasedIndoorLocalization2024}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=6fd4da8c173fd2b675abace6a6c26e02}{%
+           family={Milano},
+           familyi={M\bibinitperiod},
+           given={Filippo},
+           giveni={F\bibinitperiod}}}%
+        {{hash=d38483aff3e983d5d6e07a3c14449916}{%
+           family={Da\bibnamedelima Rocha},
+           familyi={D\bibinitperiod\bibinitdelim R\bibinitperiod},
+           given={Helbert},
+           giveni={H\bibinitperiod}}}%
+        {{hash=b359fd26c5c618f503688cbf79401024}{%
+           family={Laracca},
+           familyi={L\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod}}}%
+        {{hash=2617f2c9197c3ad9271ac6e033ed9974}{%
+           family={Ferrigno},
+           familyi={F\bibinitperiod},
+           given={Luigi},
+           giveni={L\bibinitperiod}}}%
+        {{hash=7516ef47b91e0cc1d915fde83fe1c303}{%
+           family={Espírito\bibnamedelima Santo},
+           familyi={E\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={António},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a4a0fcf0c1d2ea860fa244bc020216af}{%
+           family={Salvado},
+           familyi={S\bibinitperiod},
+           given={José},
+           giveni={J\bibinitperiod}}}%
+        {{hash=63ddaa2da4c39bdd3b7e36ae8b1de551}{%
+           family={Paciello},
+           familyi={P\bibinitperiod},
+           given={Vincenzo},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{bdfd32de2cebb4d9727160badfc9fdc2}
+      \strng{fullhash}{fc169b5edff9eb257e61f64053c8b19a}
+      \strng{fullhashraw}{fc169b5edff9eb257e61f64053c8b19a}
+      \strng{bibnamehash}{bdfd32de2cebb4d9727160badfc9fdc2}
+      \strng{authorbibnamehash}{bdfd32de2cebb4d9727160badfc9fdc2}
+      \strng{authornamehash}{bdfd32de2cebb4d9727160badfc9fdc2}
+      \strng{authorfullhash}{fc169b5edff9eb257e61f64053c8b19a}
+      \strng{authorfullhashraw}{fc169b5edff9eb257e61f64053c8b19a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{This paper addresses indoor localization using an anchor-based system based on Bluetooth Low Energy (BLE) 5.0 technology, adopting the Received Signal Strength Indicator (RSSI) for the distance estimation. Different solutions have been proposed in the scientific literature to improve the performance of this localization technology, but a detailed performance comparison of these solutions is still missing. The aim of this work is to make an experimental analysis combining different solutions for the performance improvement of BLE-based indoor localization, identifying the most effective one. The considered solutions involve different RSSI signals’ conditioning, the use of anchor–tag distance estimation techniques, as well as approaches for estimating the unknown tag position. An experimental campaign was executed in a complex indoor environment, characterized by the continuous presence in the movement of working staff and numerous obstacles. The exploitation of multichannel transmission using RSSI signal aggregation techniques showed the greater performance improvement of the localization system, reducing the positioning error (from 1.5 m to about 1 m). The other examined solutions have shown a lesser impact in the performance improvement with a decrease or an increase in the positioning errors, depending on the considered combination of the adopted solutions.}
+      \field{day}{8}
+      \field{issn}{1424-8220}
+      \field{journaltitle}{Sensors}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{number}{2}
+      \field{shortjournal}{Sensors}
+      \field{shorttitle}{{{BLE-Based Indoor Localization}}}
+      \field{title}{{{BLE-Based Indoor Localization}}: {{Analysis}} of {{Some Solutions }} for {{Performance Improvement}}}
+      \field{urlday}{7}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{volume}{24}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{376}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/s24020376
+      \endverb
+      \verb{file}
+      \verb /home/lois/Zotero/storage/5H8D5Q8P/Milano et al. - 2024 - BLE-Based Indoor Localization Analysis of Some Solutions for Performance Improvement.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/1424-8220/24/2/376
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/1424-8220/24/2/376
+      \endverb
+    \endentry
+    \entry{dardariRangingUltrawideBandwidth2009}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=c0b96752f87fc40c64e28c16678f5339}{%
+           family={Dardari},
+           familyi={D\bibinitperiod},
+           given={Davide},
+           giveni={D\bibinitperiod}}}%
+        {{hash=2941b8b6aa48e79c779b85be733cdd05}{%
+           family={Conti},
+           familyi={C\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=7d8425a3e9db0c9513c7fb8b1f67162c}{%
+           family={Ferner},
+           familyi={F\bibinitperiod},
+           given={Ulric},
+           giveni={U\bibinitperiod}}}%
+        {{hash=5f64115e10b541e3eba9ce860bc5fa69}{%
+           family={Giorgetti},
+           familyi={G\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=349b8a97a87f6171f4f2858fac00c941}{%
+           family={Win},
+           familyi={W\bibinitperiod},
+           given={Moe\bibnamedelima Z.},
+           giveni={M\bibinitperiod\bibinitdelim Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{35b8eed10708e7d69527752230396ac7}
+      \strng{fullhash}{4a96f822c93b3c5476b36597ba4b4ae3}
+      \strng{fullhashraw}{4a96f822c93b3c5476b36597ba4b4ae3}
+      \strng{bibnamehash}{35b8eed10708e7d69527752230396ac7}
+      \strng{authorbibnamehash}{35b8eed10708e7d69527752230396ac7}
+      \strng{authornamehash}{35b8eed10708e7d69527752230396ac7}
+      \strng{authorfullhash}{4a96f822c93b3c5476b36597ba4b4ae3}
+      \strng{authorfullhashraw}{4a96f822c93b3c5476b36597ba4b4ae3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0018-9219}
+      \field{journaltitle}{Proceedings of the IEEE}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{number}{2}
+      \field{shortjournal}{Proc. IEEE}
+      \field{title}{Ranging {{With Ultrawide Bandwidth Signals}} in {{Multipath Environments}}}
+      \field{urlday}{7}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{volume}{97}
+      \field{year}{2009}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{404\bibrangedash 426}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1109/JPROC.2008.2008846
+      \endverb
+      \verb{file}
+      \verb /home/lois/Zotero/storage/H48TB5WC/Dardari et al. - 2009 - Ranging With Ultrawide Bandwidth Signals in Multipath Environments.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://ieeexplore.ieee.org/document/4802191/
+      \endverb
+      \verb{url}
+      \verb http://ieeexplore.ieee.org/document/4802191/
+      \endverb
+    \endentry
+    \entry{alarifiUltraWidebandIndoor2016}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=96194c6a9127ed39d84de78137ce3cee}{%
+           family={Alarifi},
+           familyi={A\bibinitperiod},
+           given={Abdulrahman},
+           giveni={A\bibinitperiod}}}%
+        {{hash=67c1a5bb5cdb94e3f80ab045802954cf}{%
+           family={Al-Salman},
+           familyi={A\bibinithyphendelim S\bibinitperiod},
+           given={AbdulMalik},
+           giveni={A\bibinitperiod}}}%
+        {{hash=06f9a3e1d8c0d987dc8dc42b10d59f50}{%
+           family={Alsaleh},
+           familyi={A\bibinitperiod},
+           given={Mansour},
+           giveni={M\bibinitperiod}}}%
+        {{hash=be558f022d017589bd0159f7fe3077f1}{%
+           family={Alnafessah},
+           familyi={A\bibinitperiod},
+           given={Ahmad},
+           giveni={A\bibinitperiod}}}%
+        {{hash=db9e026c64922ab8ae9c1efe6641af9d}{%
+           family={Al-Hadhrami},
+           familyi={A\bibinithyphendelim H\bibinitperiod},
+           given={Suheer},
+           giveni={S\bibinitperiod}}}%
+        {{hash=10ce3cf3226e89257226463b7fb0186b}{%
+           family={Al-Ammar},
+           familyi={A\bibinithyphendelim A\bibinitperiod},
+           given={Mai},
+           giveni={M\bibinitperiod}}}%
+        {{hash=9bf3d74523ad71f3cd87991dcc3d9b00}{%
+           family={Al-Khalifa},
+           familyi={A\bibinithyphendelim K\bibinitperiod},
+           given={Hend},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{dd61f59529f113025aed0c9d9a15c154}
+      \strng{fullhash}{3039f729f6186c44656fd5e8c9c83754}
+      \strng{fullhashraw}{3039f729f6186c44656fd5e8c9c83754}
+      \strng{bibnamehash}{dd61f59529f113025aed0c9d9a15c154}
+      \strng{authorbibnamehash}{dd61f59529f113025aed0c9d9a15c154}
+      \strng{authornamehash}{dd61f59529f113025aed0c9d9a15c154}
+      \strng{authorfullhash}{3039f729f6186c44656fd5e8c9c83754}
+      \strng{authorfullhashraw}{3039f729f6186c44656fd5e8c9c83754}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{In recent years, indoor positioning has emerged as a critical function in many end-user applications; including military, civilian, disaster relief and peacekeeping missions. In comparison with outdoor environments, sensing location information in indoor environments requires a higher precision and is a more challenging task in part because various objects reflect and disperse signals. Ultra WideBand (UWB) is an emerging technology in the field of indoor positioning that has shown better performance compared to others. In order to set the stage for this work, we provide a survey of the state-of-the-art technologies in indoor positioning, followed by a detailed comparative analysis of UWB positioning technologies. We also provide an analysis of strengths, weaknesses, opportunities, and threats (SWOT) to analyze the present state of UWB positioning technologies. While SWOT is not a quantitative approach, it helps in assessing the real status and in revealing the potential of UWB positioning to effectively address the indoor positioning problem. Unlike previous studies, this paper presents new taxonomies, reviews some major recent advances, and argues for further exploration by the research community of this challenging problem space.}
+      \field{day}{16}
+      \field{issn}{1424-8220}
+      \field{journaltitle}{Sensors}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{number}{5}
+      \field{shortjournal}{Sensors}
+      \field{shorttitle}{Ultra {{Wideband Indoor Positioning Technologies}}}
+      \field{title}{Ultra {{Wideband Indoor Positioning Technologies}}: {{Analysis}} and {{Recent Advances}}}
+      \field{urlday}{7}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{volume}{16}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{707}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/s16050707
+      \endverb
+      \verb{file}
+      \verb /home/lois/Zotero/storage/VA48CVYX/Alarifi et al. - 2016 - Ultra Wideband Indoor Positioning Technologies Analysis and Recent Advances.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/1424-8220/16/5/707
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/1424-8220/16/5/707
+      \endverb
+    \endentry
+    \entry{rinaldiExperimentalCharacterizationChain2022}{inproceedings}{}{}
+      \name{author}{6}{}{%
+        {{hash=296a7fb2d16109ed3c27117a6e062b8a}{%
+           family={Rinaldi},
+           familyi={R\bibinitperiod},
+           given={Stefano},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a1a02ffcfb69860bbe9cabdaf2f902a7}{%
+           family={Musatti},
+           familyi={M\bibinitperiod},
+           given={Alessandro},
+           giveni={A\bibinitperiod}}}%
+        {{hash=93c9088335a542b6b5cc10e4a4bdf1bc}{%
+           family={Depari},
+           familyi={D\bibinitperiod},
+           given={Alessandro},
+           giveni={A\bibinitperiod}}}%
+        {{hash=c30e26385289a3ded5d2ae5cfd28c3b8}{%
+           family={Ferrari},
+           familyi={F\bibinitperiod},
+           given={Paolo},
+           giveni={P\bibinitperiod}}}%
+        {{hash=23f655c9761944fcde1d341d5482f4dd}{%
+           family={Flammini},
+           familyi={F\bibinitperiod},
+           given={Alessandra},
+           giveni={A\bibinitperiod}}}%
+        {{hash=f915737fd3e90b286454a7ac533567d5}{%
+           family={Sisinni},
+           familyi={S\bibinitperiod},
+           given={Emiliano},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Ottawa, ON, Canada}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{2894859ca03c60ce5e2ee32cde5af886}
+      \strng{fullhash}{fadd90fc3a7382df4296f22f8873b12c}
+      \strng{fullhashraw}{fadd90fc3a7382df4296f22f8873b12c}
+      \strng{bibnamehash}{2894859ca03c60ce5e2ee32cde5af886}
+      \strng{authorbibnamehash}{2894859ca03c60ce5e2ee32cde5af886}
+      \strng{authornamehash}{2894859ca03c60ce5e2ee32cde5af886}
+      \strng{authorfullhash}{fadd90fc3a7382df4296f22f8873b12c}
+      \strng{authorfullhashraw}{fadd90fc3a7382df4296f22f8873b12c}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The Internet of Things (IoT) enables services in a variety of domains. However, some of them, such as autonomous vehicles, may require information about the location where the sensed data is obtained. Well-established location technologies (e.g. the Global Navigation Satellite System - GNSS) can be used for outdoor devices, but they may fail indoors. On the contrary, Ultra-Wide Band (UWB) technology is one of the most promising solutions for Indoor Real-Time Location System (IRTLS). In general, these solutions allow for the location of devices (called tags), in relation to nodes placed in known positions in space (called anchors). Several approaches for device localization using UWB technology are known in the literature. Some of them, like the Time Differential of Arrival (TDoA) method, necessitate a time synchronization solution in order to distribute the time accurately among the anchors. The use of a wired method for anchor time synchronization is studied in this research, since the architecture of the clock distribution network may affect the signal accuracy provided to each anchor. The reference method would be to connect each anchor directly to a common clock source , however this solution is the most demanding in terms of wiring. The chain topology, in which the clock is used and then re-distributed by each of the clock network's nodes, is an intriguing option for reducing overall cabling requirements. According to the experimental characterization, the phase error of the clock generated by a chain topology is 9.3\% larger than the phase error of the reference topology, but it is still within the usage requirements.}
+      \field{booktitle}{2022 {{IEEE International Instrumentation}} and {{Measurement Technology Conference}} ({{I2MTC}})}
+      \field{day}{16}
+      \field{eventtitle}{2022 {{IEEE International Instrumentation}} and {{Measurement Technology Conference}} ({{I2MTC}})}
+      \field{isbn}{978-1-6654-8360-5}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{title}{An {{Experimental Characterization}} of {{Chain}} of {{PLLs}} for { {Wired Clock Synchronization}} of {{UWB Anchors}} for {{Indoor Location}}}
+      \field{urlday}{7}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/I2MTC48687.2022.9806698
+      \endverb
+      \verb{file}
+      \verb /home/lois/Zotero/storage/EUAD6T2H/Rinaldi et al. - 2022 - An Experimental Characterization of Chain of PLLs for Wired Clock Synchronization of UWB Anchors for.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/9806698/
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/9806698/
+      \endverb
+    \endentry
+    \entry{obeidatReviewIndoorLocalization2021}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=c260c58497f021a5e0871a878b71a368}{%
+           family={Obeidat},
+           familyi={O\bibinitperiod},
+           given={Huthaifa},
+           giveni={H\bibinitperiod}}}%
+        {{hash=574d34b0f1fb359f7d3e55d07c70f862}{%
+           family={Shuaieb},
+           familyi={S\bibinitperiod},
+           given={Wafa},
+           giveni={W\bibinitperiod}}}%
+        {{hash=509bef7b6aa80d24a64d58cfd01d80c8}{%
+           family={Obeidat},
+           familyi={O\bibinitperiod},
+           given={Omar},
+           giveni={O\bibinitperiod}}}%
+        {{hash=3c75d514efc17e65f3fa0e2297a6d8bc}{%
+           family={Abd-Alhameed},
+           familyi={A\bibinithyphendelim A\bibinitperiod},
+           given={Raed},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{2b8f82836d80bb22fe05b9027fd73b71}
+      \strng{fullhash}{c33715e907af1b5e758aea1675be4bd5}
+      \strng{fullhashraw}{c33715e907af1b5e758aea1675be4bd5}
+      \strng{bibnamehash}{2b8f82836d80bb22fe05b9027fd73b71}
+      \strng{authorbibnamehash}{2b8f82836d80bb22fe05b9027fd73b71}
+      \strng{authornamehash}{2b8f82836d80bb22fe05b9027fd73b71}
+      \strng{authorfullhash}{c33715e907af1b5e758aea1675be4bd5}
+      \strng{authorfullhashraw}{c33715e907af1b5e758aea1675be4bd5}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper introduces a review article on indoor localization techniques and technologies. The paper starts with current localization systems and summarizes comparisons between these systems in terms of accuracy, cost, advantages, and disadvantages. Also, the paper presents different detection techniques and compare them in terms of accuracy and cost. Finally, localization methods and algorithms, including angle of arrival (AOA), time of arrival (TOA), and recived signal strength (RSS) are introduced. The study contains concepts, requirements, and specifications for each category of methods presents pros and cons for investigated methods, and conducts comparisons between them.}
+      \field{issn}{0929-6212, 1572-834X}
+      \field{journaltitle}{Wireless Personal Communications}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{1}
+      \field{shortjournal}{Wireless Pers Commun}
+      \field{title}{A {{Review}} of {{Indoor Localization Techniques}} and {{Wireless Technologies}}}
+      \field{urlday}{24}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{volume}{119}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{289\bibrangedash 327}
+      \range{pages}{39}
+      \verb{doi}
+      \verb 10.1007/s11277-021-08209-5
+      \endverb
+      \verb{file}
+      \verb /home/lois/Zotero/storage/TY3YWNIX/Obeidat et al. - 2021 - A Review of Indoor Localization Techniques and Wireless Technologies.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/10.1007/s11277-021-08209-5
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/10.1007/s11277-021-08209-5
+      \endverb
+    \endentry
+    \entry{bianchiRSSIBasedIndoorLocalization2019}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=12ada663fd8d5e88f250734c8be299ab}{%
+           family={Bianchi},
+           familyi={B\bibinitperiod},
+           given={Valentina},
+           giveni={V\bibinitperiod}}}%
+        {{hash=ddc87fa31dc55f6d5ba3c943c1fd6064}{%
+           family={Ciampolini},
+           familyi={C\bibinitperiod},
+           given={Paolo},
+           giveni={P\bibinitperiod}}}%
+        {{hash=4442df418b62557a23f2ed6a12c6c47b}{%
+           family={De\bibnamedelima Munari},
+           familyi={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Ilaria},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{f8bbcc9b788015f72275697c29959134}
+      \strng{fullhash}{f8bbcc9b788015f72275697c29959134}
+      \strng{fullhashraw}{f8bbcc9b788015f72275697c29959134}
+      \strng{bibnamehash}{f8bbcc9b788015f72275697c29959134}
+      \strng{authorbibnamehash}{f8bbcc9b788015f72275697c29959134}
+      \strng{authornamehash}{f8bbcc9b788015f72275697c29959134}
+      \strng{authorfullhash}{f8bbcc9b788015f72275697c29959134}
+      \strng{authorfullhashraw}{f8bbcc9b788015f72275697c29959134}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Location-based services have increased in popularity in recent years and can be fruitfully exploited in the field of smart homes , opening the doors to a wide range of personalized services. In this context, radio technology can be widely employed since, other than connecting devices in the home system, it offers solutions for the user localization issue without the need of any extra device. Techniques based on received signal strength indicator (RSSI) are often used, relying on fingerprinting or proximity algorithms. In this paper, a novel RSSI-based fingerprinting approach for room-level localization is presented: it is a threshold algorithm based on receiver operating characteristic analysis. Moreover, the actual user location is estimated from his/her interaction with the home system devices deployed in the house: if the home environment is inhabited by more than one person, it becomes of utmost importance the identification of who is actually interacting with a given device. A proximity method is exploited for this purpose. Tests have been carried out to characterize the approach, particularly, the effects of RSSI samples, number and position, of the anchor nodes have been analyzed. Finally, some considerations about power consumption of the mobile node have been presented.}
+      \field{issn}{0018-9456, 1557-9662}
+      \field{journaltitle}{IEEE Transactions on Instrumentation and Measurement}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{number}{2}
+      \field{shortjournal}{IEEE Trans. Instrum. Meas.}
+      \field{title}{{{RSSI-Based Indoor Localization}} and {{Identification}} for {{ ZigBee Wireless Sensor Networks}} in {{Smart Homes}}}
+      \field{urlday}{30}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{volume}{68}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{566\bibrangedash 575}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/TIM.2018.2851675
+      \endverb
+      \verb{file}
+      \verb /home/lois/Zotero/storage/9ATDJXTB/Bianchi et al. - 2019 - RSSI-Based Indoor Localization and Identification for ZigBee Wireless Sensor Networks in Smart Homes.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/8412766/
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/8412766/
+      \endverb
+    \endentry
+    \entry{chenUpViewVisualBasedIndoor2024}{article}{}{}
+      \name{author}{10}{}{%
+        {{hash=da31f56113cb61a1fef7cf7543eefff8}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Chen},
+           giveni={C\bibinitperiod}}}%
+        {{hash=020623a227e58ca7ebf11166d6e34559}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Yuwei},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=1a6521f2c2f0740d4682f72c9285ec58}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Jianliang},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9b566dc209526b8a762e2abf75f06cbc}{%
+           family={Jiang},
+           familyi={J\bibinitperiod},
+           given={Changhui},
+           giveni={C\bibinitperiod}}}%
+        {{hash=7122e605666fa1adea07a0891ee98e92}{%
+           family={Jia},
+           familyi={J\bibinitperiod},
+           given={Jianxin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b849167c9ac45abf633a33e1be24906b}{%
+           family={Bo},
+           familyi={B\bibinitperiod},
+           given={Yuming},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=6812c219ac98680ba18c14dcbd23fb69}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Xuanzhi},
+           giveni={X\bibinitperiod}}}%
+        {{hash=007d49f2ffa3691d44e2bf458291b4dd}{%
+           family={Dai},
+           familyi={D\bibinitperiod},
+           given={Haojie},
+           giveni={H\bibinitperiod}}}%
+        {{hash=331a1df9571c565fd97c163ac437af43}{%
+           family={Puttonen},
+           familyi={P\bibinitperiod},
+           given={Eetu},
+           giveni={E\bibinitperiod}}}%
+        {{hash=1862e7cb352e20d0412562af162e8ee8}{%
+           family={Hyyppä},
+           familyi={H\bibinitperiod},
+           given={Juha},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{1ccea5f857df28e6e13a0cd4be28bb7d}
+      \strng{fullhash}{d8dba73b08a3d5a897fe45c18fea8880}
+      \strng{fullhashraw}{d8dba73b08a3d5a897fe45c18fea8880}
+      \strng{bibnamehash}{1ccea5f857df28e6e13a0cd4be28bb7d}
+      \strng{authorbibnamehash}{1ccea5f857df28e6e13a0cd4be28bb7d}
+      \strng{authornamehash}{1ccea5f857df28e6e13a0cd4be28bb7d}
+      \strng{authorfullhash}{d8dba73b08a3d5a897fe45c18fea8880}
+      \strng{authorfullhashraw}{d8dba73b08a3d5a897fe45c18fea8880}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Indoor positioning plays a crucial role in various domains. It is employed in various applications, such as navigation, asset tracking, and location-based services (LBS), in Global Navigation Satellite System (GNSS) denied or degraded areas. The visual-based positioning technique is a promising solution for high-accuracy indoor positioning. However, most visual positioning research uses the side-view perspective, which is susceptible to interferences and may cause concerns about privacy and public security. Therefore, this paper innovatively proposes an up-view visual-based indoor positioning algorithm. It uses the up-view images to realize indoor positioning. Firstly, we utilize a well-trained YOLO V7 model to realize landmark detection and gross extraction. Then, we use edge detection operators to realize the precision landmark extraction, obtaining the landmark pixel size. The target position is calculated based on the landmark detection and extraction results and the pre-labeled landmark sequence via the Similar Triangle Principle. Additionally, we also propose an inertial navigation system (INS)-based landmark matching method to match the landmark within an up-view image with a landmark in the pre-labeled landmark sequence. This is necessary for kinematic indoor positioning. Finally, we conduct static and kinematic experiments to verify the feasibility and performance of the up-view-based indoor positioning method. The results demonstrate that the up-view visual-based positioning is prospective and worthy of research.}
+      \field{day}{14}
+      \field{issn}{2072-4292}
+      \field{journaltitle}{Remote Sensing}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{6}
+      \field{shortjournal}{Remote Sensing}
+      \field{title}{An {{Up-View Visual-Based Indoor Positioning Method}} via {{Deep Learning}}}
+      \field{urlday}{8}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{volume}{16}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1024}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/rs16061024
+      \endverb
+      \verb{file}
+      \verb /home/lois/Zotero/storage/LZCVZ2VH/Chen et al. - 2024 - An Up-View Visual-Based Indoor Positioning Method via Deep Learning.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2072-4292/16/6/1024
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2072-4292/16/6/1024
+      \endverb
+    \endentry
+    \entry{sesyukSurvey3DIndoor2022}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=177435ceece3903eab127540df1fa234}{%
+           family={Sesyuk},
+           familyi={S\bibinitperiod},
+           given={Andrey},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d320c58b2ce009e209f1b4373f8714dd}{%
+           family={Ioannou},
+           familyi={I\bibinitperiod},
+           given={Stelios},
+           giveni={S\bibinitperiod}}}%
+        {{hash=03e61d697587f8c7ecf9ee70023a7ac8}{%
+           family={Raspopoulos},
+           familyi={R\bibinitperiod},
+           given={Marios},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{e9527c2a090d371a62c6ff8c9f2508b3}
+      \strng{fullhash}{e9527c2a090d371a62c6ff8c9f2508b3}
+      \strng{fullhashraw}{e9527c2a090d371a62c6ff8c9f2508b3}
+      \strng{bibnamehash}{e9527c2a090d371a62c6ff8c9f2508b3}
+      \strng{authorbibnamehash}{e9527c2a090d371a62c6ff8c9f2508b3}
+      \strng{authornamehash}{e9527c2a090d371a62c6ff8c9f2508b3}
+      \strng{authorfullhash}{e9527c2a090d371a62c6ff8c9f2508b3}
+      \strng{authorfullhashraw}{e9527c2a090d371a62c6ff8c9f2508b3}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Indoor localization has recently and significantly attracted the interest of the research community mainly due to the fact that Global Navigation Satellite Systems (GNSSs) typically fail in indoor environments. In the last couple of decades, there have been several works reported in the literature that attempt to tackle the indoor localization problem. However, most of this work is focused solely on two-dimensional (2D) localization, while very few papers consider three dimensions (3D). There is also a noticeable lack of survey papers focusing on 3D indoor localization; hence, in this paper, we aim to carry out a survey and provide a detailed critical review of the current state of the art concerning 3D indoor localization including geometric approaches such as angle of arrival (AoA), time of arrival (ToA), time difference of arrival (TDoA), fingerprinting approaches based on Received Signal Strength (RSS), Channel State Information (CSI), Magnetic Field (MF) and Fine Time Measurement (FTM), as well as fusion-based and hybrid-positioning techniques. We provide a variety of technologies, with a focus on wireless technologies that may be utilized for 3D indoor localization such as WiFi, Bluetooth, UWB, mmWave, visible light and sound-based technologies. We critically analyze the advantages and disadvantages of each approach/technology in 3D localization.}
+      \field{day}{1}
+      \field{issn}{1424-8220}
+      \field{journaltitle}{Sensors}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{23}
+      \field{shortjournal}{Sensors}
+      \field{title}{A {{Survey}} of {{3D Indoor Localization Systems}} and {{ Technologies}}}
+      \field{urlday}{24}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{volume}{22}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{9380}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/s22239380
+      \endverb
+      \verb{file}
+      \verb /home/lois/Zotero/storage/7RUB4NNW/Sesyuk et al. - 2022 - A Survey of 3D Indoor Localization Systems and Technologies.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/1424-8220/22/23/9380
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/1424-8220/22/23/9380
+      \endverb
+    \endentry
+    \entry{priyanthaCricketLocationsupportSystem2000}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=552f5983d7f222d881c9c3b077712086}{%
+           family={Priyantha},
+           familyi={P\bibinitperiod},
+           given={Nissanka\bibnamedelima B.},
+           giveni={N\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=be69661aa130a13b272c01b2e121299c}{%
+           family={Chakraborty},
+           familyi={C\bibinitperiod},
+           given={Anit},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ec394c5150bcaf5dac455aa9e3221f4e}{%
+           family={Balakrishnan},
+           familyi={B\bibinitperiod},
+           given={Hari},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Boston Massachusetts USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{e75014f17c8a892ce35e7a2b689061de}
+      \strng{fullhash}{e75014f17c8a892ce35e7a2b689061de}
+      \strng{fullhashraw}{e75014f17c8a892ce35e7a2b689061de}
+      \strng{bibnamehash}{e75014f17c8a892ce35e7a2b689061de}
+      \strng{authorbibnamehash}{e75014f17c8a892ce35e7a2b689061de}
+      \strng{authornamehash}{e75014f17c8a892ce35e7a2b689061de}
+      \strng{authorfullhash}{e75014f17c8a892ce35e7a2b689061de}
+      \strng{authorfullhashraw}{e75014f17c8a892ce35e7a2b689061de}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 6th Annual International Conference on {{ Mobile}} Computing and Networking}
+      \field{eventtitle}{{{MobiCom00}}: {{The}} 6th {{Annual International Conference}} on {{Mobile Computing}} and {{Networking}}}
+      \field{isbn}{978-1-58113-197-0}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{title}{The {{Cricket}} Location-Support System}
+      \field{urlday}{24}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{year}{2000}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{32\bibrangedash 43}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1145/345910.345917
+      \endverb
+      \verb{file}
+      \verb /home/lois/Zotero/storage/AAI48IBP/Priyantha et al. - 2000 - The Cricket location-support system.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://dl.acm.org/doi/10.1145/345910.345917
+      \endverb
+      \verb{url}
+      \verb https://dl.acm.org/doi/10.1145/345910.345917
+      \endverb
+    \endentry
+    \entry{piontekImprovingAccuracyUltrasoundbased2007}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=4986c0c3c089c79924e8600c959551a7}{%
+           family={Piontek},
+           familyi={P\bibinitperiod},
+           given={Hubert},
+           giveni={H\bibinitperiod}}}%
+        {{hash=1bca0fcba6d822c884f8007f9d7c4262}{%
+           family={Seyffer},
+           familyi={S\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod}}}%
+        {{hash=8f2696894bee53098b0299abd1e77167}{%
+           family={Kaiser},
+           familyi={K\bibinitperiod},
+           given={Jörg},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{4bdb1c18c1a933765cbce37039c8131c}
+      \strng{fullhash}{4bdb1c18c1a933765cbce37039c8131c}
+      \strng{fullhashraw}{4bdb1c18c1a933765cbce37039c8131c}
+      \strng{bibnamehash}{4bdb1c18c1a933765cbce37039c8131c}
+      \strng{authorbibnamehash}{4bdb1c18c1a933765cbce37039c8131c}
+      \strng{authornamehash}{4bdb1c18c1a933765cbce37039c8131c}
+      \strng{authorfullhash}{4bdb1c18c1a933765cbce37039c8131c}
+      \strng{authorfullhashraw}{4bdb1c18c1a933765cbce37039c8131c}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We present an improvement to ultrasound-based indoor location systems like Cricket (Priyantha et al. The Cricket location-support system, 2000). By encoding and modulating the ultrasound pulses, we are able to achieve greater accuracy in distance measurements. Besides improving the distance measurements, we improve the position update rate by synchronising the active beacons. We also propose a method that could further improve the update rate by superimposing encoded ultrasound pulses. Further, an experimental evaluation of our improvements is presented.}
+      \field{day}{1}
+      \field{issn}{1617-4917}
+      \field{journaltitle}{Personal and Ubiquitous Computing}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{6}
+      \field{shortjournal}{Pers Ubiquit Comput}
+      \field{title}{Improving the Accuracy of Ultrasound-Based Localisation Systems}
+      \field{urlday}{24}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{volume}{11}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{439\bibrangedash 449}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1007/s00779-006-0096-1
+      \endverb
+      \verb{file}
+      \verb /home/lois/Zotero/storage/7RA9FXP2/Piontek et al. - 2007 - Improving the accuracy of ultrasound-based localisation systems.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s00779-006-0096-1
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s00779-006-0096-1
+      \endverb
+      \keyw{Indoor localisation,Pulse compression,Ultrasound}
+    \endentry
+    \entry{samatasInertialMeasurementUnits2022}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=f92474c339ff089c2be68f6fa4bd8fe3}{%
+           family={Samatas},
+           familyi={S\bibinitperiod},
+           given={Gerasimos\bibnamedelima G.},
+           giveni={G\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=5082323b58ed12d5111cf3332a05b93a}{%
+           family={Pachidis},
+           familyi={P\bibinitperiod},
+           given={Theodore\bibnamedelima P.},
+           giveni={T\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{920663e0568e5a89e2f9c0288b10264e}
+      \strng{fullhash}{920663e0568e5a89e2f9c0288b10264e}
+      \strng{fullhashraw}{920663e0568e5a89e2f9c0288b10264e}
+      \strng{bibnamehash}{920663e0568e5a89e2f9c0288b10264e}
+      \strng{authorbibnamehash}{920663e0568e5a89e2f9c0288b10264e}
+      \strng{authornamehash}{920663e0568e5a89e2f9c0288b10264e}
+      \strng{authorfullhash}{920663e0568e5a89e2f9c0288b10264e}
+      \strng{authorfullhashraw}{920663e0568e5a89e2f9c0288b10264e}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Robots and especially mobile robots have experienced rapid growth, making them part of everyday life. An inertial measurement unit (IMU), which is a set of sensors, plays an important role in mobile robots’ navigation. Data collected by the IMU sensors on a robot are properly converted and useful information is calculated concerning, i.e., position, orientation , and acceleration. With the advancement of technology, IMUs have been transformed from large and complex devices into small, flexible, and efficient ones. The main sensors included in an IMU are the gyroscope, the accelerometer, and the magnetometer. Additionally, there are other sensors such as a barometer, a temperature sensor, a pressure sensor, or even an attitude sensor. The components that an IMU consists of are many and the main differences concern the technology they integrate, the designer purpose, and the specifications set by the manufacturer. The purpose of this review is a comparative presentation of 42 IMU models from 7 different manufacturers over the last five years comparing main features such as structure details, connectivity, and communication protocols. Moreover, statistical results are quantitatively and qualitatively presented providing a future user the possibility to select the proper IMU.}
+      \field{day}{16}
+      \field{issn}{2411-9660}
+      \field{journaltitle}{Designs}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{number}{1}
+      \field{shortjournal}{Designs}
+      \field{shorttitle}{Inertial {{Measurement Units}} ({{IMUs}}) in {{Mobile Robots}} over the {{Last Five Years}}}
+      \field{title}{Inertial {{Measurement Units}} ({{IMUs}}) in {{Mobile Robots}} over the {{Last Five Years}}: {{A Review}}}
+      \field{urlday}{24}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{volume}{6}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{17}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/designs6010017
+      \endverb
+      \verb{file}
+      \verb /home/lois/Zotero/storage/ICIIM6ZN/Samatas and Pachidis - 2022 - Inertial Measurement Units (IMUs) in Mobile Robots over the Last Five Years A Review.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2411-9660/6/1/17
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2411-9660/6/1/17
+      \endverb
+    \endentry
+    \entry{barshanInertialNavigationSystems}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=2e0865c5e0acb149a01b39c7c55df20e}{%
+           family={Barshan},
+           familyi={B\bibinitperiod},
+           given={Billur},
+           giveni={B\bibinitperiod}}}%
+        {{hash=d80b201a47512d5cd5016a5aed60d1ae}{%
+           family={Durrant-Whyte},
+           familyi={D\bibinithyphendelim W\bibinitperiod},
+           given={Hugh\bibnamedelima F},
+           giveni={H\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{fd1870a34ab86dc88e363c4c199e1c14}
+      \strng{fullhash}{fd1870a34ab86dc88e363c4c199e1c14}
+      \strng{fullhashraw}{fd1870a34ab86dc88e363c4c199e1c14}
+      \strng{bibnamehash}{fd1870a34ab86dc88e363c4c199e1c14}
+      \strng{authorbibnamehash}{fd1870a34ab86dc88e363c4c199e1c14}
+      \strng{authornamehash}{fd1870a34ab86dc88e363c4c199e1c14}
+      \strng{authorfullhash}{fd1870a34ab86dc88e363c4c199e1c14}
+      \strng{authorfullhashraw}{fd1870a34ab86dc88e363c4c199e1c14}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A low-cost solid-state inertial navigation system (INS)for mobile robotics applicationsis described. Error models for the inertial sensorsare generated and includedin an Extended Kalman Filter (EKF) for estimating the position and orientation of a moving robot vehicle. Two Merent solid-state gyroscopes have been evaluated for estimating the orientation of the robot. Performance of the gyroscopes with error models is compared to the performance when the error models are excluded from the system. The results demonstrate that without error compensation, the error in orientationis between 5-15"/min but can be improved at least by a factor of 5 if an adequate error model is supplied. S i a r error models have been developed for each axis of a solid-statetriaxial accelerometerand for a conducting-bubbletilt sensorwhich may also be used as a low-cost accelerometer. Linear position estimationwith information from accelerometersand tilt sensorsis more susceptible to errors due to the doubleintegration process involved in estimatingposition. With the system described here, the position drift rate is 1-8 c d s , depending on the frequency of acceleration changes. An integrated inertial platform consisting of three gyroscopes, a triaxial accelerometer and two tilt sensors is described. Results from tests of this platform on a large outdoor mobile robot system are describedand compared to the results obtained from the robot's own radar-based guidance system. Like all inertial systems, the platform requires additional information from some absolute position-sensing mechanism to overcome long-term drift. However, the results show that with careful and detailed modeling of error sources, low-cost inertial sensing systems can provide valuable orientation and position information particularly for outdoor mobile robot applications.}
+      \field{langid}{english}
+      \field{title}{Inertial {{Navigation Systems}} for {{Mobile Robots}}}
+      \verb{file}
+      \verb /home/lois/Zotero/storage/8FHKRCHL/Barshan and Durrant-Whyte - Inertial Navigation Systems for Mobile Robots.pdf
+      \endverb
+    \endentry
+    \entry{diazSection9Review}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=3c93557d40060fe4d279548e5dcbced9}{%
+           family={Diaz},
+           familyi={D\bibinitperiod},
+           given={Estefania\bibnamedelima Munoz},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=85b485491d3ca9c7839f5cd6e349b48a}{%
+           family={Ahmed},
+           familyi={A\bibinitperiod},
+           given={Dina\bibnamedelima Bousdar},
+           giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=85458e3e3acb34cc6d7a2a9882b4a163}{%
+           family={Kaiser},
+           familyi={K\bibinitperiod},
+           given={Susanna},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{53064f499e6860abf7f4be9b9ade712d}
+      \strng{fullhash}{53064f499e6860abf7f4be9b9ade712d}
+      \strng{fullhashraw}{53064f499e6860abf7f4be9b9ade712d}
+      \strng{bibnamehash}{53064f499e6860abf7f4be9b9ade712d}
+      \strng{authorbibnamehash}{53064f499e6860abf7f4be9b9ade712d}
+      \strng{authornamehash}{53064f499e6860abf7f4be9b9ade712d}
+      \strng{authorfullhash}{53064f499e6860abf7f4be9b9ade712d}
+      \strng{authorfullhashraw}{53064f499e6860abf7f4be9b9ade712d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Pedestrian navigation using inertial sensors constitutes an infrastructure-free positioning system. The fact that inertial sensors are already available in every smartphone or other carry on devices constitutes their great advantage and makes them especially interesting for mass market applications. This chapter offers a detailed explanation of the estimation of the orientation of the sensor, since it is of key importance in order to compute the position of the user. The positioning is usually derived in two different ways depending on the location of the sensor on the human body. These two approaches are deeply explained in this chapter. Disregarding the location on the human body where the sensor is mounted on, the accumulated drift error on the estimated positioning is an still unsolved issue using medium- and low-cost inertial sensors. The latest algorithms proposed to tackle the drift error are summarized in this chapter. Finally, an overview of the upcoming pedestrian inertial positioning is offered.}
+      \field{langid}{english}
+      \field{title}{Section 9: {{A Review}} of {{Indoor Localization Methods}} Based on {{Inertial Sensors}}}
+      \verb{file}
+      \verb /home/lois/Zotero/storage/44PYWCAB/Diaz et al. - Section 9 A Review of Indoor Localization Methods based on Inertial Sensors.pdf
+      \endverb
+    \endentry
+    \entry{ramsden2006hall}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=d90fcae5db6d62975234a1a075569182}{%
+           family={Ramsden},
+           familyi={R\bibinitperiod},
+           given={Edward},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Amsterdam}%
+      }
+      \list{publisher}{1}{%
+        {Newnes}%
+      }
+      \strng{namehash}{d90fcae5db6d62975234a1a075569182}
+      \strng{fullhash}{d90fcae5db6d62975234a1a075569182}
+      \strng{fullhashraw}{d90fcae5db6d62975234a1a075569182}
+      \strng{bibnamehash}{d90fcae5db6d62975234a1a075569182}
+      \strng{authorbibnamehash}{d90fcae5db6d62975234a1a075569182}
+      \strng{authornamehash}{d90fcae5db6d62975234a1a075569182}
+      \strng{authorfullhash}{d90fcae5db6d62975234a1a075569182}
+      \strng{authorfullhashraw}{d90fcae5db6d62975234a1a075569182}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2nd}
+      \field{isbn}{978-0-08-052374-3}
+      \field{title}{Hall-Effect Sensors: Theory and Application}
+      \field{year}{2006}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

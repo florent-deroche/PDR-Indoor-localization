@@ -1,0 +1,440 @@
+% config
+\documentclass[11pt, a4paper]{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}    
+\usepackage[french]{babel}
+\usepackage{amsmath}
+
+\usepackage{graphicx}       
+\usepackage{amsmath}        
+
+\usepackage[backend=biber, style=numeric, sorting=none]{biblatex}
+\usepackage{csquotes}
+\addbibresource{PDR.bib}
+
+\widowpenalty=10000
+\clubpenalty=10000
+
+\usepackage[table]{xcolor} 
+\usepackage{tabularx}      
+\usepackage{pdflscape}    
+\usepackage{array}    
+\usepackage{xltabular}
+\usepackage{geometry}
+
+
+
+\setlength{\parskip}{1em} 
+
+
+\setlength{\parindent}{1.25cm} 
+
+% -------------------------------
+
+\title{\textbf{État de l'Art - Projet de recherche en localisation intérieure sans signaux GNSS}}
+\author{Loïs Gonce \and Florent Deroche \and Jolan Deffayet \and Kaiyue Yang}
+\date{\today}
+
+
+\begin{document}
+\newgeometry{top=3.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+% éléments initiaux
+
+\maketitle
+{
+	\setlength{\parskip}{0pt}
+	\tableofcontents
+}
+\restoregeometry
+% structure du rapport
+\newpage
+\section{Contexte scientifique et industriel}
+
+
+La localisation d’objets, et en particulier de robots mobiles, en intérieur représente un enjeu majeur de l’Industrie 4.0 et de manière plus générale de la robotique. En effet, connaître en temps réel la position d’un système autonome permet d’assurer sa navigation, le bon déroulement de ses tâches et la coordination avec le reste des équipements présents. Un cas d’étude serait Amazon et ses entrepôts logistiques munis de plateformes mobiles dont le but est de déplacer des colis.
+
+Cependant, les systèmes de positionnement par satellites (Géolocalisation et Navigation par un Système de Satellites, GNSS) comme le GPS, Galileo et GLONASS ne fonctionnent pas en intérieur en raison de l’atténuation et de la réflexion des signaux à travers différents obstacles tels que les murs ou structures métalliques.
+L’utilisation des technologies GNSS étant impossible, cela nous contraint à concevoir et déployer des systèmes de localisation intérieur (Indoor Positioning Systems, IPS) qui nous permettent à partir d’autres sources de données de calculer la position de l’automate \cite{huangIndoorPositioningSystems2023}.
+
+\section{Problématique}
+
+La problématique principale de l’industrie est donc d’obtenir des solutions robustes, suffisamment précises, abordables, économes en énergie, facilement déployables et ayant une faible latence, répondant aux contraintes opérationnelles des environnements industriels. L’objectif est de trouver des approches répondant au maximum à ces différentes contraintes.
+
+\section{Objectifs de l'état de l'art}
+
+L’objectif de l’état de l’art est de fournir une analyse compréhensive des solutions d’IPS disponibles ainsi que des contraintes auxquelles elles sont soumises afin de catégoriser les grandes familles de solutions existantes (technologies et méthodes employées), comparer leurs principes, performances et contraintes et ainsi en dégager des tendances et limites, cela dans dans le but d’établir une méthode répondant à la problématique du projet.
+
+\section{Méthodologie de la revue}
+
+La revue de littérature a été menée selon une méthodologie rigoureuse afin de garantir la pertinence et la qualité des sources analysées. Notre approche s'est appuyée sur les directives issues du cadre défini par le sujet du projet. Notre recherche bibliographique a été menée sur des plateformes et bases de données reconnues en ingénierie et robotique. Nous avons notamment consulté des bases généralistes comme Google Scholar et ScienceDirect, des plateformes spécialisées telles que IEEE Xplore et MDPI, ainsi que les archives académiques francophones de theses.fr. L'objectif était d'identifier les avancées les plus récentes et pertinentes pour une application à budget limité dans le contexte de l'industrie 4.0, en appliquant des critères de sélection rigoureux. 
+
+Dans un premier temps, la recherche a été limitée aux publications parues entre 2019 et 2024, permettant d’analyser les technologies de positionnement les plus matures, et les méthodes d'estimation les plus récentes via l’apprentissage automatique et la fusion de données. Un travail approfondi de comparaison des performances, des contraintes, et de la synergie des différentes solutions a été effectué. Dans un second temps, l’exploration s’est focalisée sur des combinaisons des termes anglais “Indoor localisation” , “mobile robots”, “No GNSS” pour délimiter le champ d’étude aux systèmes autonomes en environnement intérieur sans localisation satellite.
+
+Enfin, une attention particulière à été portée aux articles traitant de l’environnement industriel et aux technologies favorisant le faible coût, une basse consommation énergétique et la robustesse. Nous avons ensuite consulté des articles fondamentaux plus anciens afin d’obtenir les clés nécessaires au bon traitement du sujet. Cependant, notre revue présente un biais méthodologique principal qui est l’omission des articles disponibles uniquement via abonnements aux revues institutionnelles, ce qui limite potentiellement notre accès à certaines publications de haut niveau, derrière des murs payants non couverts par nos accès.  
+
+\section{Contraintes et critères}
+
+La mise en œuvre d’un système de localisation pour robots mobiles ne doit pas être réduite seule à une problématique de précision de mesure. De nombreux autres critères sont à prendre en compte, et imposent une analyse transversale incluant la performance opérationnelle du système, les contraintes dynamiques d’un robot mobile ou encore les limites budgétaires \cite{retscherIndoorNavigationUser2022}. Le premier point de cette analyse concerne en particulier la qualité de la mesure :
+
+\begin{itemize}
+	\item Ainsi le critère de précision, définie comme l’erreur moyenne entre la position estimée et la réalité, doit être relié à la notion d’intégrité du système. Cette notion est critique pour la sécurité, car elle mesure la confiance que l’on peut accorder à l’estimation, et fournit une borne supérieure de l’erreur, garantissant ainsi une limite à ne pas dépasser indispensable pour éviter les collisions. 
+	\item De plus, le système doit garantir une continuité de service sans interruption avec une précision de qualité, et ce même en cas de défaillance technique de capteurs ou de signaux perdus par exemple. Cette exigence est aussi à relier à la notion de disponibilité, comprise comme la proportion de temps où le système est opérationnel sur la zone de navigation du robot , afin d’assurer que l’utilisateur du système de localisation puisse profiter du service en toute situation.
+	\item Enfin, l’aspect cybersécurité du système n’est pas à négliger, avec la nécessité d'authentifier de manière fiable les robots ou infrastructures déployées pour assurer le fonctionnement du service de localisation, et d’assurer la sécurité des données collectées par lesdits capteurs.
+\end{itemize}
+
+Dans un second temps, ce sont les contraintes imposées par le fonctionnement en temps réel de nos robots mouvants, qui vont impacter fortement nos critères de sélection pour le choix d’une solution de localisation : 
+
+\begin{itemize}
+	\item En ce sens, la latence du système, définie comme le temps minimal écoulé entre la mesure du signal et l’obtention de la position estimée,  est ainsi un des critères à la plus haute importance à prendre en compte. Cela est dû au fonctionnement inhérent en temps réel de nos robots, afin d’éviter toutes collisions dangereuses avec des opérateurs humains ou du matériel d’entreprise. 
+	\item Ensuite, la robustesse du système est à évaluer ;  le système doit maintenir ses performances même en cas de perturbation des systèmes électroniques. En effet, les interférences électromagnétiques sont courantes en milieu industriel, là où de tels robots évoluent, et les systèmes de localisation se doivent d’y résister parfaitement. 
+	\item Enfin, le calibrage et le démarrage du système de localisation doit être suffisamment rapide pour permettre une mise en service réactive, avec un TTF (Time to First fix) court pour atteindre une précision de qualité. 
+\end{itemize}
+
+Dans un dernier temps, au delà des contraintes matérielles, ce sont les limitations imposées par le déploiement des technologies de localisation choisies pour notre système de localisation qui vont influencer notre choix : 
+
+\begin{itemize}
+	\item Le premier point à considérer est le plus évident et concerne le coût de la mise en place du système, ce qui comprend l’achat du matériel (Capteurs plus ou moins sophistiqués, ESP32, Ancres émettrices…) et du déploiement de ces infrastructures avec leur mise en service, qui nécessite plus ou moins de temps et d’efforts de calibrage. Certaines solutions sont bien plus onéreuses que d’autres et se révèlent vite contraignantes dans un contexte à budget réduit comme le nôtre
+	\item Ensuite, la consommation d'énergie de notre système est importante à prendre en compte et à optimiser, étant donné qu’une partie du système de localisation peut être installée à même le robot, un fonctionnement sur batterie peut conditionner le choix d’une solution à faible consommation électrique au profit d’une autre plus énergivore. Ce choix impacte directement l’autonomie, le besoin en maintenance, et le coût lié au fonctionnement de notre système de localisation. 
+	\item Enfin, la faisabilité du déploiement de nos technologies est conditionnée par l'architecture du réseau et son intégration dans l'environnement existant. La portée des signaux utilisés (WiFi ou Bluetooth par exemple) dimensionne directement l’échelle et le coût du système  : elle dicte la densité d'ancres émettrices nécessaires pour garantir une couverture totale de la zone, décuplant la quantité de matériel à installer. Cette lourdeur peut néanmoins être atténuée par l'interopérabilité du système, comprise comme sa capacité à profiter des équipements déjà en place (comme de points d'accès Wi-Fi servant de “Signal of Opportunity”) précédant l’installation de notre système, évitant ainsi la création d'un réseau dédié. Cependant, même avec une infrastructure optimisée, la complexité de calibration reste un frein majeur ; certaines méthodes nécessitent des campagnes préliminaires de mesures initiales intensives (exemple du fingerprinting) peuvent s'avérer trop chronophages et rigides pour un déploiement flexible. 
+\end{itemize}
+
+\section{Technologies supports}
+\subsection{Technologies radiofréquences}
+\subsubsection{Wi-fi}
+
+Le Wi-Fi, régi par les normes du groupe IEEE 802.11, est l’une des technologies les plus répandues pour la localisation en espace intérieur. Pour cause, elle peut utiliser l’infrastructure déjà existante (routeurs Wi-Fi), rendant son déploiement plus économe. Le signal est généralement analysé de deux manières différentes qui sont l’Indication de la Force du Signal Reçu (RSSI) et le Temps d’Aller-Retour (RTT) \cite{daiSurveyLatestWiFi2023}. 
+
+La première consiste à mesurer la puissance des signaux que l’objet dont on souhaite la localisation reçoit des différents émetteurs. Plusieurs approches sont alors possibles.
+
+L’approche dominante est le fingerprinting \cite{shangOverviewWiFiFingerprintingbased2022}, qui se fait en deux étapes. La première étape (phase hors-ligne) est de mesurer les valeurs RSSI des différents émetteurs à des points de référence pour obtenir pour chacun de ces points une empreinte radio. On se constitue ainsi une base de données reliant RSSI et position géographique \cite{heWiFiFingerprintBasedIndoor2016}. Lors de la deuxième étape (phase en-ligne), il ne reste plus qu’à mesurer l’empreinte radio de l’appareil puis la comparer à la base de données grâce à un algorithme (souvent k-plus proches voisins ou réseaux de neurones) afin d’estimer la position de l’appareil \cite{heWiFiFingerprintBasedIndoor2016}. Cette méthode a pour inconvénient que la première étape est assez longue et doit être refaite si des changements physiques sont apportés à l’environnement dans lequel évolue l’appareil.
+
+La deuxième approche est la trilatération. L’appareil mesure la puissance d’au moins trois points d’accès et, à partir d’un modèle de propagation du signal, estime la distance à chaque point d’accès. La position peut alors être estimée. Cette méthode a pour avantage par rapport au fingerprinting de ne pas requérir une collecte de données, laquelle peut-être fastidieuse. Elle n’est cependant pas aussi précise car le signal est très sensible aux obstacles (murs, personnes, etc.) et aux interférences (notamment au phénomène de multi-trajets), faisant ainsi que la conversion entre puissance et distance n’est pas fiable \cite{liuSurveyWirelessIndoor2007}. La précision est alors de 5 à 10 mètres voire plus selon la complexité de l’environnement.
+
+Quelque soit l’approche, l’utilisation du Wi-Fi et du RSSI donne une précision de l’ordre de quelques mètres, généralement entre 2 et 5 mètres avec le fingerprinting \cite{daiSurveyLatestWiFi2023}.
+
+Le RTT consiste quant à lui à mesurer le temps qu’il faut au signal pour effectuer un aller-retour entre l’appareil et un point d’accès. Il est par la suite nécessaire de soustraire au temps total du trajet le temps qui est dû au traitement interne du signal par l’appareil et le point d’accès. On utilise pour ce faire l’horodatage : l’heure exacte de la réception d’un signal et de la réponse/requête est utilisée pour calculer le temps de traitement. Un simple calcul nous permet ensuite d’obtenir à partir du RTT et de la vitesse du signal une estimation de la distance entre l’appareil et le point d’accès. En faisant pareil avec plusieurs autres points d’accès, on obtient finalement une estimation de la position de l’appareil par multilatération.
+
+La précision est plus élevée qu’avec le RSSI, de l’ordre de 1 à 2 mètres, car la puissance du signal (dont le RSSI est une mesure) est beaucoup plus sujette aux variations \cite{bullmannComparison24GHz2020}. De plus, son déploiement ne nécessite pas de phase de collecte. Il faut cependant que la structure soit compatible avec la norme 802.11mc \cite{gentnerWiFiRTTIndoorPositioning2020} pour avoir un horodatage suffisamment précis.
+
+Les signaux Wi-Fi sont peu onéreux et peuvent réutiliser l’infrastructure déjà existante. Ils ne permettent en revanche pas d’avoir une précision infra-métrique, ce qui limite leur utilisation à certains domaines industriels \cite{khoshrangbafExperimentalEvaluationIndoor2025}.
+
+\subsubsection{BLE}
+
+Le Bluetooth Low Energy (BLE) est une version à basse consommation d’énergie du standard Bluetooth. Cette faible consommation permet notamment l’utilisation de balises fonctionnant sur batterie, contrairement au Wi-Fi qui s’appuie presque obligatoirement sur le réseau informatique pré-existant \cite{sadowskiRSSIBasedIndoorLocalization2018}. Le signal est le plus souvent exploité de deux manières différentes : le RSSI et l’Angle d’Arrivée (AoA).
+
+La première méthode, la plus courante, utilise un modèle de propagation du signal pour estimer la distance entre l’appareil et les balises à partir du RSSI. La position est ensuite estimée par multilatération.À l’instar du Wi-Fi, cette méthode est peu coûteuse et facile à mettre en place, mais offre une mauvaise précision, allant généralement de 3 à 5 mètres \cite{khoshrangbafExperimentalEvaluationIndoor2025}.
+
+La seconde méthode, possible depuis l’introduction du Bluetooth 5.1, s’appuie sur la radiogoniométrie \cite{woolleyBluetoothDirectionFinding}. Autrement dit, plutôt que de chercher la distance qui sépare l’émetteur du récepteur, on va chercher l’angle avec lequel le signal atteint le récepteur. Pour ce faire, l’appareil à localiser devra être équipé d’un émetteur et des récepteurs spéciaux, appelés ancres, chacune munie de plusieurs antennes espacées d’une distance connue,seront nécessaires. Lorsque le signal émis par l’appareil atteint une ancre, il lui faudra plus ou moins de temps pour atteindre les différentes antennes de l’ancre à cause de la différence de marche. Le décalage temporel est mesuré alors sous forme de déphasage. On peut à partir du déphasage calculer l’angle d’arrivée du signal (azimut et élévation). Les angles d’arrivées calculés par les différentes ancres nous permettent finalement d’avoir la position de l’émetteur par triangulation. Cette méthode offre une précision très intéressante, souvent inférieure à 1 mètre, mais nécessite des ancres qui sont plus complexes que les simples récepteurs habituellement utilisés \cite{milanoBLEBasedIndoorLocalization2024}.
+
+En conclusion, le BLE offre une plus faible consommation d’énergie que le Wi-Fi. Quant à ses performances, elles sont comparables lorsque c’est le RSSI qui est exploité et bien meilleures (précision infra-métrique possible) lorsqu’on calcule l’AoA, bien qu’il faille une infrastructure dédiée installée et calibrée uniquement pour la localisation dans ce dernier cas \cite{milanoBLEBasedIndoorLocalization2024}.
+
+\subsubsection{Ultra Wideband}
+
+L’Ultra Wideband (UWB), régie par la norme IEEE 802.15.4, a un fonctionnement très différent du Wi-Fi et du Bluetooth. Plutôt que d’envoyer un unique signal continu sur une bande étroite, il consiste à envoyer des milliards de signaux par seconde, chacun étalé sur une très large bande de fréquence (>500 MHz). La très courte durée des impulsions (de l’ordre de la nanoseconde) font qu’elles sont très nettes, permettant ainsi une discrimination facile des signaux directs des signaux réfléchis (multi-trajets). En effet, une courte durée implique que la réception de la première impulsion est suffisamment courte pour qu’il n’y ait pas de chevauchement avec les impulsions réfléchies (qui arrivent avec un léger retard). Contrairement au Wi-Fi ou au Bluetooth, la première impulsion est donc isolée temporellement. Cette propriété est naturellement très intéressante pour la localisation \cite{dardariRangingUltrawideBandwidth2009}. La localisation par UWB repose quasiment exclusivement sur la mesure du Temps de Vol (ToF) des impulsions, déclinée en deux méthodes principales : le Two-Way Ranging (TWR) et le Time Difference of Arrival (TDoA).
+
+Avec la première méthode (TWR), l’appareil à localiser envoie une requête à une ancre fixe, qui lui envoie à son tour une réponse. En mesurant le temps précis de l’aller-retour et en lui soustrayant le temps de traitement interne, on obtient la distance exacte séparant l’appareil de l’ancre. En répétant ce processus sur un total d’au moins trois ancres, il est alors possible de déterminer la position exacte de l’appareil par trilatération. Cette méthode ne requiert pas de synchronisation d’horloge entre les différentes ancres et est donc robuste. Cependant, elle est limitée en capacité car lorsqu’un appareil dialogue avec une ancre, les autres ancres doivent attendre pour ne pas brouiller le signal. De plus, l’appareil doit attendre la réponse des ancres et reste donc à l’écoute entre-temps, ce qui rend cette méthode plus énergivore \cite{alarifiUltraWidebandIndoor2016}.
+
+La deuxième méthode, le TDoA, est privilégiée pour les déploiements industriels massifs. L’appareil se contente d’émettre périodiquement une impulsion sans attendre de réponse. Les ancres, qui doivent être parfaitement synchronisées entre elles, enregistrent l’heure exacte d’arrivée du signal. On obtient dès lors une différence de temps entre chaque paire d’ancres. Pour chaque paire d’ancres, on sait que l’appareil est plus proche d’une des ancres d’une distance correspondant à la durée t — sans pour autant qu’on sache à quelle moment l’impulsion a été émise. Géométriquement, l’ensemble des points respectant cette condition forme une hyperbole. En faisant de même avec d’autres paires d'ancres, on obtient autant d’hyperboles. La position de l’appareil est alors déterminée par l’intersection de ces courbes.
+
+Cette méthode présente l’avantage de ne pas avoir de limite de capacité, contrairement au TWR, puisqu’il n’y a pas de dialogue entre l’émetteur et les ancres. De plus, l’appareil se contente d’émettre une brève impulsion puis passe immédiatement en mode veille, ce qui réduit considérablement sa consommation d’énergie \cite{alarifiUltraWidebandIndoor2016}. Il faut cependant que les ancres soient parfaitement synchronisées (à la nanoseconde près), ce qui complexifie l’infrastructure et le déploiement de cette solution (un câblage dédié sera souvent nécessaire) \cite{rinaldiExperimentalCharacterizationChain2022}.
+
+Pour conclure, l’UWB est une technologie idéale pour la précision, cette dernière allant généralement de 10 à 30 cm \cite{khoshrangbafExperimentalEvaluationIndoor2025, obeidatReviewIndoorLocalization2021}. Cependant, elle nécessite une infrastructure plus complexe et plus coûteuse.
+
+\subsubsection{ZigBee}
+
+Le Zigbee est un protocole qui permet la communication d'équipements personnels ou domestiques à faible consommation. Il est basé sur la norme IEEE 802.15.4 pour les réseaux à dimension personnelle et est créé pour la communication à courte distance \cite{obeidatReviewIndoorLocalization2021}. Ce protocole possède des capteurs ou étiquettes mobiles qui passent la majorité du temps en mode veille pour économiser l’énergie, ce qui permet un communication robuste et une couverture étendue sans infrastructure câblée complexe et rend le ZigBee particulièrement prépondérant dans la domotique (Smart Home) et les applications industrielles M2M (Machine-to-Machine) \cite{bianchiRSSIBasedIndoorLocalization2019}.
+
+Dans le contexte de la localisation intérieure, le ZigBee est principalement utilisé comme support pour les méthodes basées sur le RSSI (décrites dans la section précédente). L’approche standard consiste à convertir le niveau de signal reçu en distance via des modèles de propagation logarithmiques, avant d’appliquer une trilatération ou d’utiliser des techniques de fingerprinting. Cependant, comme le soulignent Bianchi et al \cite{bianchiRSSIBasedIndoorLocalization2019}. , bien que le ZigBee offre l’avantage d’une très faible consommation et d’un coût d’infrastructure réduit\cite{sadowskiRSSIBasedIndoorLocalization2018}, la précision basée sur le RSSI souffre de l’instabilité du signal due aux effets de trajets multiples et aux obstacles physiques. Des techniques de filtrage sont donc nécessaires pour obtenir une précision exploitable (de l’ordre de 3 à 5 mètres).
+
+\subsubsection{Radio-identification}
+
+La radio-identification (RFID), est une méthode pour mémoriser et récupérer des données à distance en utilisant des marqueurs ‘radio-étiquettes’ pour identifier les objets, les personnes ou les animaux domestiques. Dans le contexte de la localisation intérieure, la technologie RFID est utilisée comme une solution de référence pour l'identification d'objets par ondes radio. Il existe 2 grandes familles fondamentales : la RFID passive et active.
+
+La RFID passive repose sur des étiquettes en faible consommation de source d'énergie interne ; elles sont activées par le champ électromagnétique du lecteur. Cette contrainte limite leur usage à une localisation de proximité, appelée "Cell of Origin" (CoO), qui signale la présence d'un objet dans une zone restreinte sans préciser les coordonnées exactes de l’objet \cite{obeidatReviewIndoorLocalization2021}.
+
+La RFID active utilise des étiquettes équipées de leur propre source d’alimentation (batterie par exemple), offrant une portée étendue et une émission continue. Pour optimiser la précision de ces systèmes, on utilise souvent l'architecture LANDMARC : elle intègre des tags de référence fixés aux positions connues pour calibrer dynamiquement l'environnement et compenser les aléas de propagation du signal \cite{obeidatReviewIndoorLocalization2021}.
+
+\subsection{Technologies non-radiofréquences}
+
+\subsubsection{Caméras}
+
+La localisation par vision utilise des capteurs optiques (notamment les caméras RGB, stéréoscopiques ou RGB-D) pour extraire des informations géométriques de l'environnement. Contrairement aux technologies radiofréquence décrites dans la section précédente, la vision de caméra n'est pas perturbée par des interférences électromagnétiques, mais dépend davantage des conditions d'éclairage.
+
+Reconnaissance de marqueurs : C'est l'approche la plus robuste pour l'industrie. Des marqueurs visuels (type April Tags ou QR Codes) sont placés à des endroits connus pour que la caméra puisse détecter le marqueur et calculer sa position relative grâce à la déformation de la perspective \cite{chenUpViewVisualBasedIndoor2024}. Cette approche offre une grande précision mais nécessite de modifier l'infrastructure (pour coller des marqueurs par exemple).
+
+SLAM Visuel et Deep Learning : Pour éviter de modifier l'environnement, les méthodes modernes utilisent le SLAM Visuel (Simultaneous Localization and Mapping) qui sert à construire une carte 3D en temps réel grâce aux points d'intérêt naturels. Une approche récente (en 2024) consiste à utiliser des caméras orientées vers le plafond (Up-View) accompagnées du Deep Learning \cite{chenUpViewVisualBasedIndoor2024}. Les réseaux neurones apprennent à reconnaître la disposition des lumières et du plafond de l'environnement afin de fournir une position précise même dans des zones bondées où une caméra frontale serait bloquée par la foule.
+
+Cette technologie offre souvent une information riche mais nécessite beaucoup de ressources de calcul (GPU/CPU), mais elle pose aussi des problèmes de confidentialité \cite{chenUpViewVisualBasedIndoor2024}.
+
+\subsubsection{LiDAR}
+
+Le LiDAR est une technologie de télédétection active utilisant des impulsions de lumière laser pour estimer les distances et la profondeur. Le système émet des faisceaux laser discrets et mesure le temps qu'ils mettent pour revenir après avoir rebondi sur un obstacle (Time-of-Flight) \cite{huangIndoorPositioningSystems2023}. Le LiDAR génère directement des données géométriques précises.
+
+On distingue deux variantes principales du LiDAR. La première approche est celle de la navigation naturelle qui utilise les structures déjà existantes pour se repérer. Elle se décline en deux modes principaux :
+
+\begin{itemize}
+	\item Le SLAM (Localisation et cartographie simultanée) offre une autonomie totale. Le robot arrive dans une zone inconnue, scanne les murs et les machines et construit sa propre carte en temps réel. En cas d’environnement dynamique, cela permet de reconstruire la carte. Elle utilise des algorithmes (Gmapping, Cartographer ) pour corriger la dérive du capteur \cite{sesyukSurvey3DIndoor2022}.
+	\item La localisation sur Carte (Map-Matching, AMCL)  est elle utilisée en cas d’environnement non dynamique, une fois la carte créée via le SLAM, le robot n'a pas besoin de la reconstruire en permanence. Elle utilise des méthodes probabilistes  pour comparer son scan laser actuel avec la carte enregistrée. Cette méthode est plus légère que le SLAM complet \cite{huangIndoorPositioningSystems2023}.
+\end{itemize}
+
+La deuxième approche est la navigation par réflecteurs qui vise une fiabilité maximale au prix d'une installation physique en échange d’une flexibilité plus faible. Par exemple, dans la triangulation sur réflecteurs une installation de bandes réfléchissantes permet de détecter les pics d’intensité lumineuse renvoyés par ces réflecteurs et de calculer la position par triangulation géométrique pure \cite{sesyukSurvey3DIndoor2022}.
+
+Pour ce qui est des critères de performance, sa précision est son principal atout \cite{sesyukSurvey3DIndoor2022}. De plus, le système fonctionne dans l’obscurité et n’est pas perturbé par les interférences électromagnétiques \cite{retscherIndoorNavigationUser2022}. Sa robustesse et sa disponibilité sont donc deux points forts. Cependant, cette technologie possède un coût élevé \cite{obeidatReviewIndoorLocalization2021}. Aussi, les lasers traversant le verre et rebondissant sur les miroirs risquent de créer des faux obstacles. Enfin, le traitement des nuages de points demande des processeurs puissants, impactant l'autonomie du robot.
+
+\subsubsection{Infrarouge}
+
+L’Infrarouge est une technologie optique de communication et de détection utilisant des ondes lumineuses non visibles pour transmettre des informations ou mesurer des angles \cite{obeidatReviewIndoorLocalization2021}. Le système repose sur un couple émetteur-récepteur actif qui nécessite une Ligne de Vue directe (Line-of-Sight) pour fonctionner \cite{huangIndoorPositioningSystems2023}. L’infrarouge en localisation cherche généralement à identifier l’origine d’un signal ou son angle d’arrivée.
+
+La première approche principale de la mise en œuvre  de l’infrarouge est celle de la détection de zone ou de proximité par capteurs de proximité embarqués ou capteurs passifs qui fournissent une information topologique plutôt que géométrique. Elle se décline en usages ponctuels : La détection de proximité permet une localisation binaire ou symbolique. Le robot détecte un signal codé émis dans un cône restreint par une balise placée à un endroit stratégique. Cette méthode est utilisée pour le recalage final (Docking) ou la validation de passage de porte, ne dépendant pas de la géométrie de la pièce mais de la connectivité optique \cite{huangIndoorPositioningSystems2023}. Le suivi passif (PIR) est lui utilisé pour localiser les occupants sans équipement. Des capteurs détectent le rayonnement thermique naturel des corps en mouvement. Couplée à des cartes d'accessibilité, cette méthode permet d'estimer la position approximative d'un sujet dans une pièce \cite{retscherIndoorNavigationUser2022}.
+
+La deuxième est la localisation géométrique de précision. Son principe est une navigation continue en échange d’une modification de l’infrastructure ou de l’utilisation de balises actives. On peut penser à la méthode de l’Angle d’Arrivée (AoA) ou un réseau de capteurs mesure l’angle d’incidence du signal émis par une balise mobile. En utilisant la triangulation angulaire, le système détermine la position précise de l’agent \cite{obeidatReviewIndoorLocalization2021}.
+
+Pour ce qui est des performances, son immunité aux interférences électromagnétiques est son principal atout. Aussi, le système est peu coûteux et possède une consommation énergétique faible. Cependant, la nécessité absolue d’une ligne de vue directe est une contrainte critique de même que la lumière directe ou un éclairage fluorescent intense qui risqueraient de saturer les capteurs et d’aveugler le système \cite{huangIndoorPositioningSystems2023}. Pour finir, la portée reste limitée à l’espace d’une pièce nécessitant un nombre élevé de balises.
+
+\subsubsection{Communication par lumière visible}
+
+Cette technologie est souvent associée au Li-Fi et est notée VLC. C’est une technologie de transmission de données sans fil utilisant le spectre de la lumière visible en modulant à très haute fréquence l’intensité lumineuse des éclairages LED  \cite{huangIndoorPositioningSystems2023}. Ces changements étant à très haute fréquence ne sont pas visibles à l’œil humain mais sont repérés et captés par des photosenseurs permettant d’en extraire des informations portant sur la localisation d’une manière très précise car les signaux lumineux sont bloqués par les parois, limitant les erreurs.
+
+Il existe deux variantes principales de mise en place de la VLC. Elles dépendent des types de récepteurs utilisés \cite{sesyukSurvey3DIndoor2022}. La première utilise des photodiodes simples comme capteurs d’intensité lumineuse qui se basent majoritairement sur la vitesse et la détection de signal pur utilisant principalement le  Received Signal Strength Indication (RSSI) qui permet d’estimer la distance entre le robot et la source lumineuse. D’autres méthodes plus complexes comme l’AoA ou la Différence de Temps d’arrivée (TDoA) sont parfois employées si une triangulation plus précise est requise \cite{obeidatReviewIndoorLocalization2021}.
+
+La seconde variante est souvent appelée Optical Camera communication (OCC). Elle exploite les capteurs d’images (caméras CMOS) présents sur les robots mobiles ou autres appareils afin d’analyser la source lumineuse comme repère visuel \cite{sesyukSurvey3DIndoor2022}. En effet, le système identifie chaque lampe grâce à un clignotement codé ou à sa position relative dans l’image et en combinant les coordonnées 3D connues des lampes et leurs coordonnées 2D trouvées sur l’image, le robot est dans la possibilité de calculer sa position exacte par géométrie projective ou photogrammétrie \cite{huangIndoorPositioningSystems2023}. Cette solution permet d’utiliser les caméras déjà embarquées pour la navigation.
+
+L’atout majeur de cette technologie est la précision qui atteint bien souvent un niveau centimétrique inférieur à 10 centimètres étant donc bien supérieur aux standards Wi-Fi ou Bluetooth. Aussi,ce système valorise l’infrastructure d’éclairages qui sont déjà existants permettant de réduire le coût de déploiement à l’adaptation des drivers LED. Aussi, son immunité face aux interférences radiofréquences est un vrai point fort pour les milieux sensibles comme les usines denses en équipements électroniques \cite{retscherIndoorNavigationUser2022}. Cependant, cette technologie possède une contrainte critique qui est la nécessité d’une Ligne de Vue (LoS) permanente entre le luminaire et le capteur ce qui fait que la moindre obstruction couperait le lien de localisation. Enfin, la portée est limitée au cône de lumière (field-of-view) et le système peut être perturbé par certaines lumières comme une forte lumière solaire directe \cite{sesyukSurvey3DIndoor2022}.
+
+\subsubsection{Ultrasons}
+
+Les techniques de localisation en intérieur par ultrasons reposent sur la mesure du temps de vol d'un signal entre une balise fixe et un récepteur mobile. Classiquement, chaque balise émet une impulsion ultrasonore couplée à un signal radio de référence, le récepteur évalue alors la différence de temps d’arrivée. Cette donnée, convertie en distance via la vitesse du son, permet par trilatération de reconstruire la position du mobile ou d'identifier sa zone \cite{priyanthaCricketLocationsupportSystem2000}.
+
+Cependant, la simple détection de front d’onde est sensible au bruit et aux réflexions, les appareils de mesure déformant la forme de l’impulsion. Pour accroître la robustesse, les systèmes modernes remplacent l’impulsion par une séquence codée en phase comme une suite BPSK pseudo-aléatoire. À la réception, la détection de seuil laisse place au calcul de corrélation avec la séquence de référence. L'alignement génère un pic net, offrant un repère temporel précis et un meilleur rapport signal sur bruit. La précision devient centimétrique \cite{piontekImprovingAccuracyUltrasoundbased2007}, bien qu'un algorithme doit isoler le premier pic plausible pour rejeter les échos secondaires.
+
+La fréquence de mise à jour, cruciale pour la robotique mobile, dépend de l'organisation temporelle des émissions. Une première méthode synchronise les balises via un partage TDMA : chaque zone a un créneau où ses balises émettent successivement, limitant les collisions. Une seconde approche utilise des séquences orthogonales : chaque balise émet simultanément son propre code, le récepteur les séparant par corrélation. En pratique, les architectures efficaces combinent codage, planification et fusion avec des capteurs inertiels IMUs pour lisser les erreurs et interpoler les positions. On obtient ainsi une localisation robuste aux réverbérations, précise et compatible avec les contraintes de coût et d'énergie de la robotique mobile.
+
+\subsubsection{Unité de mesure inertielle}
+
+Les technologies de localisation intérieures par capteurs inertiels reposent sur le principe de navigation à l’estime, appelée “Dead reckoning”. Cette méthode consiste à calculer la position actuelle d’un appareil en projetant sa position, son déplacement et sa vitesse à partir d’une position précédente connue \cite{samatasInertialMeasurementUnits2022}. L’architecture matérielle qui compose ces types de systèmes est appelée IMU, pour unité de mesure inertielle. Celle-ci est généralement composée de trois accéléromètres ainsi que de trois gyroscopes orthogonaux mesurant la force spécifique et la vitesse angulaire selon chaque axe de l’espace cartésien. Ces capteurs sont fréquemment couplés à des magnétomètres afin d’exploiter le champ magnétique terrestre pour améliorer la précision de l’estimation de l’orientation. Ils offrent une solution autonome, qui se distingue des autres technologies radiofréquences par son indépendance vis-à-vis de tout émetteur externe.
+
+Le traitement par algorithme des données inertielles, concernant les robots roulants en mouvement continu, intègrent directement les données inertielles fusionnées avec l'odométrie des roues \cite{samatasInertialMeasurementUnits2022}. Cependant, ils souffrent d'une accumulation d'erreurs plus rapide faute de pouvoir appliquer un recalibrage grâce aux discontinuité du mouvement, comme lors des phases d’arrêts à vitesse nulle inhérentes au cycle de marche d’un piéton.
+
+Malgré cela, la limitation majeure inhérente aux capteurs inertiels demeure la dérive, résultant de l’accumulation temporelle des erreurs de mesure telle que le biais, ou le bruit lors des processus d’intégration mathématique de l’accélération, afin de retrouver la position. Pour minimiser ce phénomène, la robotique mobile exploite des algorithmes avancés de réduction de dérive incluant des contraintes géométriques, un recalibrage via les données de mesure absolues issues d’autre capteurs de signaux à l’aide d’un filtre de Kalman étendu (on parle de fusion de capteurs) ou par l'utilisation de techniques de SLAM, pour  “simultaneous localization and mapping”. Ces dernières exploitent la détection de points de repère environnementaux pour recaler la position lorsque le robot revisite une zone connue \cite{barshanInertialNavigationSystems, diazSection9Review}. En définitive, bien que la technologie inertielle offre l'avantage de l'autonomie, la tendance actuelle s'oriente vers la fusion multi-capteurs pour compenser les limitations intrinsèques des solutions fondées sur les IMUs. 
+
+\subsubsection{Capteurs à effet Hall}
+
+Les méthodes utilisant des capteurs à effet Hall reposent sur le fait de mesurer le champ magnétique de façon compacte, linéaire et économique. La robustesse élevée et le faible coût permettent de déployer de façon massive ces capteurs sur les robots mobiles ou bien dans les infrastructures \cite{ramsden2006hall}. Le principe est de créer un paysage magnétique artificiel via des aimants placés à des emplacements connus comme des murs ou des rails qui permettent à une matrice de capteurs embarquée de comparer les vecteurs mesurés à un modèle géométrique pour déduire la position. À plus grande échelle on peut s’affranchir de ces aimants en exploitant les perturbations naturelles du champ terrestre causées par les structures métalliques du bâtiment ce que l’on appelle le fingerprinting.
+
+Cette méthode se déroule en deux étapes dont la première qui est une phase préliminaire où l'on relève sur une grille l’empreinte magnétique grâce aux vecteurs de champ et gradients à chaque position permettant de constituer une base de données. Ensuite durant la phase de fonctionnement le robot compare ses mesures instantanées à cette base via des algorithmes de classification comme le k-NN ou des filtres particulaires pour estimer sa position \cite{retscherIndoorNavigationUser2022}. Le résultat est souvent couplé avec les mesures d’une IMU pour compenser les dérives possibles.
+
+Cependant, la précision dépend de la stabilité du champ. En effet, toute modification structurelle importante comme le déplacement d’une machine ou d’un câble haute tension imposera une recalibration de la base de mesure pour éviter les imprécisions.  Aussi, la capture des variations locales du champ magnétique nécessite un maillage initial dense et un pré-traitement long et fastidieux ce qui peut rendre ces méthodes difficiles à mettre en place.
+
+\newpage
+
+
+\newgeometry{margin=1.5cm}
+
+\begin{landscape}
+\section{Tableau récapitulatif}
+\thispagestyle{empty}
+
+% 2. CENTRAGE VERTICAL
+\vspace*{\fill}
+
+% 3. TITRE
+
+
+\vspace{0.5cm} % Espace sous le titre
+
+% 4. CONFIGURATION
+\renewcommand{\arraystretch}{1.3}      
+\renewcommand\tabularxcolumn[1]{m{#1}} 
+\setlength{\tabcolsep}{5pt}            
+\rowcolors{3}{gray!5}{white}           
+\footnotesize                          
+
+% 5. TABLEAU
+\begin{xltabular}{\linewidth}{|l|
+    >{\centering\arraybackslash}m{1.5cm}|
+    >{\centering\arraybackslash}m{2.2cm}|
+    >{\centering\arraybackslash}m{1.8cm}|
+    >{\centering\arraybackslash}m{1.8cm}|
+    >{\raggedright\arraybackslash}X|        % Avantages (aligné gauche)
+    >{\raggedright\arraybackslash}X|}       % Inconvénients (aligné gauche
+
+    % Légende
+    \caption{Comparatif complet des technologies de localisation} \label{tab:comparatif_final} \\
+
+    % --- EN-TETE  ---
+    \hline
+    \rowcolor{blue!25} 
+    \textbf{Techno.} & \textbf{Coût} & \textbf{Précision} & \textbf{Portée} & \textbf{Conso.} & \centering\textbf{Avantages} & \centering\textbf{Inconvénients} \tabularnewline \hline
+    \endfirsthead
+
+    \hline
+    \rowcolor{blue!25} 
+    \textbf{Techno.} & \textbf{Coût} & \textbf{Précision} & \textbf{Portée} & \textbf{Conso.} & \centering\textbf{Avantages} & \centering\textbf{Inconvénients} \tabularnewline \hline
+    \endhead
+
+    % --- RADIOFREQUENCE ---
+    \multicolumn{7}{|l|}{\cellcolor{blue!10}\textbf{Radiofréquence}} \\ \hline
+
+    Wi-Fi & Faible & Faible \newline (1-5 m) & Haute & Élevée & Infrastructure existante & Sensible aux obstacles et interférences \\ \hline
+
+    BLE & Faible & Faible (RSSI) \newline Moyenne (AoA) & Moyenne & Faible & Déploiement facile & Infrastructure dédiée nécessaire (AoA) \\ \hline
+
+    UWB & Élevé & Très haute & Moyenne & Faible (TDoA) \newline Haute (TWR) & Robustesse & Synchronisation, infrastructure complexe \\ \hline
+
+    ZigBee & Faible & Faible \newline (3-5m) & Très Haute (maillage) & Très faible & Coût infra. réduit & Signal instable, Filtrage important \\ \hline
+
+    RFID & Élevé & Faible à Moyenne & Haute (Active) \newline Faible (Passive) & Faible (Active) \newline Nulle (Passive) & Identification, Portée étendue & Localisation de proximité (Passive) \\ \hline
+
+    % --- NON RADIOFREQUENCE ---
+    \multicolumn{7}{|l|}{\cellcolor{blue!10}\textbf{Non radiofréquence}} \\ \hline
+
+    Caméras & Variable & Haute & Haute & Élevée & Très robuste, Info riche & Ressources calcul, Confidentialité \\ \hline
+
+    LIDAR & Élevé & Très Haute ($\le$ 2.5cm) & Haute & Haute & Robustesse, Autonomie & Traitement lourd, Obstacles Optiques \\ \hline
+
+    IR & Moyen & Haute ($<$10cm) & Faible & Faible & Robustesse, Latence & Continuité, Robustesse \\ \hline
+
+    VLC & Moyen & Haute ($<$10cm) & Faible & Moyenne & Authentification, Interop. & Continuité, Disponibilité (LoS requise) \\ \hline
+
+    Ultrasons & Moyen & Haute & Haute & Faible & Robuste aux réverbérations & Nécessite synchro. et codage complexe \\ \hline
+
+    IMU & Très faible & Dérive & Illimitée & Très faible & Autonome, Peu cher & Accumulation d'erreur, nécessite fusion \\ \hline
+
+    Capt. Hall & Faible & Dépend champ mag. & Extensible & Faible & Compact, robuste & Fingerprinting fastidieux, Sensible aux métaux \\ \hline
+
+\end{xltabular}
+
+\vspace*{\fill}
+
+\end{landscape}
+\restoregeometry
+\section{Proposition de solution}
+
+Pour la suite de notre projet, nous envisageons d’opérer une fusion de plusieurs des méthodes présentées précédemment. L’idée serait de combiner la trilatération par signaux BLE aux données récoltées par une unité de navigation inertielle au sein d’un filtre de Kalman étendu.
+
+Pour recevoir et émettre les signaux, des microcontrôleurs ESP32 seraient utilisés. Ce choix a été largement motivé par des contraintes économiques — les ESP32 étant une solution particulièrement abordable — et techniques : ses capacités natives orientent le choix vers le BLE, excluant de fait toutes les méthodes nécessitant du matériel supplémentaire.
+
+Cette solution offre plusieurs avantages. Premièrement, le coût total de l’écosystème est marginal par rapport aux solutions LiDAR ou UWB commerciales. De plus, sa capacité de mise à l’échelle (scalabilité) n’a théoriquement pas de limite : les balises fonctionnant en mode passif, elles se contentent d’émettre et laissent au robot la charge d’interpréter le signal sans risquer de saturer le réseau.
+
+En revanche, l’instabilité du RSSI sera un point sur lequel il faudra être vigilant. En effet, la puissance du signal est fortement affectée par la géométrie de l’environnement dans lequel se propage l’onde. Il sera également nécessaire de tenir compte du caractère anisotrope des antennes dont sont équipés les ESP32. De plus, il faudra gérer efficacement leurs ressources pour qu’ils puissent à la fois recevoir les signaux et effectuer les opérations matricielles coûteuses du filtre de Kalman.
+
+\subsection{Bases théoriques de la localisation hybride}
+
+Pour l’implémentation de notre filtre de kalman étendu, on détaille tout d’abord la physique et la logique derrière la trilatération RSSI via bluetooth. La trilatération Bluetooth repose sur l'estimation de la distance entre les émetteurs (3 ancres ESP32) et le récepteur (robot équipé d’un ESP32 ou d’un téléphone). Le modèle standard utilisé est le Log Distance Path Model Loss.
+
+$$RSSI(d) = RSSI(d_0) - 10n \log_{10}\left(\frac{d}{d_0}\right) + X_\sigma$$
+
+Où :
+\begin{itemize}
+	\item $RSSI(d_0)$ est la puissance du signal reçue à une distance de référence $d_0$ d’un mètre par exemple. C'est une constante de calibration qui dépend de la puissance d'émission et du gain des antennes.
+	\item $n$ est l'exposant d'atténuation. En espace libre, $n=2$. En environnement industriel encombré, $n$ varie typiquement entre 2.0 et 4.0, reflétant l'absorption du signal par les obstacles
+	\item $X_\sigma$ est une variable aléatoire gaussienne de moyenne nulle représentant les effets d'ombrage du signal avec lui-même.
+\end{itemize}
+
+C’est en fusionnant les distances estimées du robot à chacune des 3 ancres qui nous permet de retrouver la localisation de celui-ci par trilatération. Cependant, Les interférences constructives et destructives du signal bluetooth causent des fluctuations rapides du RSSI même si le robot ne bouge pas, donnant une précision de l’ordre de 3 à 5m. C'est pourquoi la trilatération brute est souvent jugée insuffisante et nécessite un lissage temporel via un filtre de kalman étendu pour en améliorer la précision.
+
+Pour notre fusion de capteurs, on ajoute une centrale inertielle (IMU) sur le robot. L'IMU mesure l'accélération linéaire $a$ et la vitesse angulaire $\omega$. La position est obtenue par double intégration de l'accélération :
+
+$$p(t) = \iint a(t) \, dt \, dt$$
+
+Le probIème majeur de ces capteurs à bas coût est Ia présence de bruit blanc et de biais sur Ia mesure. Lorsque I’accélération est intégrée, un biais constant sur I'accéléromètre se traduit par une erreur de position qui croît quadratiquement avec Ie temps. D'où la nécessité de re-calibrer Ia position estimée grâce à la triIatération bIuetooth qui fournit une Iocalisation absoIue, permettant de compenser la dérive des capteurs inertiels.
+
+Le principal algorithme utilisé pour la fusion de nos données est le filtre de kalman étendu.Ce filtre est l'estimateur optimal pour les systèmes non linéaires, comme notre relation pour la distance via RSSI. L'EKF permet de linéariser ces fonctions autour des points de fonctionnement via une matrice Jacobienne.
+
+La fusion des données se déroule en 2 étapes :
+\begin{itemize}
+	\item La première est l’étape de Prédiction :  entre deux scans BLE, l'EKF utilise les données de l'IMU pour "avancer" l'état du robot et projeter sa position. La covariance de l'erreur et l’incertitude augmentent légèrement à chaque pas.
+	\item La seconde est l’étape de mise à jour : Lorsqu'une mesure BLÉ est disponible, l'EKF corrige la position prédite. Le gain de Kalman détermine le poids accordé à cette correction en fonction de la confiance relative accordée à l'IMU (matrice Q) par rapport au BLE (matrice $R$).
+
+\end{itemize}
+
+\subsection{Architecture Logicielle : ESP-IDF}
+
+Le choix de l'environnement de développement est crucial pour garantir la stabilité du système. L'utilisation de l'ESP-IDF (Espressif IoT Development Framework) est indispensable pour une application de robotique en temps réel fiable.
+
+L'un des atouts majeurs de ce framework est la gestion avancée de la coexistence radio. Il est possible de régler les priorités entre les différentes ondes permettant de configurer le scan BLE pour qu'il soit interrompu périodiquement, laissant la priorité au trafic MQTT envoyant les données.
+
+L'architecture permet également d'exploiter le Multitâche Symétrique (SMP) en répartissant explicitement les tâches sur les deux cœurs de l'ESP32 :Le cœur 0 (protocol CPU) dédié aux tâches de fond comme la maintenance du Wi-Fi, la pile bluetooth et la communication réseau et le cœur 1 (application cpu) réservé aux processus critiques tels que l’acquisition des données IMU, l’exécution de l’algorithme de filtrage. Cette séparation garantit un comportement stable du robot.
+
+Enfin, l'ESP-IDF donne accès à des bibliothèques hautement optimisées comme esp-dsp qui contient des implémentations de filtres de Kalman et d'opérations matricielles.
+
+\subsection{Implementation du filtre de Kalman étendu}
+
+Dans cette partie, on va détailler comment on fusionne mathématiquement l'accélération provenant d'une IMU avec les données de trilatération issues du RSSI. L'objectif est de stabiliser la position du robot malgré les bruits de mesure.
+
+On va d'abord construire le vecteur d'état $x_k$ pour l'instant $k$. On y intègre la position et la vitesse du robot:
+
+$$x_k = \begin{bmatrix} p_x \\ p_y \\ v_x \\ v_y \end{bmatrix}$$
+
+Choix du capteur : Si on utilise un capteur avancé, on se simplifie la vie car l'orientation est gérée en interne.
+Alternative : Sinon, on devra ajouter l'angle de cap $\psi$ et le biais du gyroscope à notre vecteur.
+
+On va effectuer ensuite une étape de prédiciton à haute fréquence (environ 100 Hz). On va prédire la nouvelle position en utilisant l'accélération linéaire ($a_x, a_y$) de notre IMU comme entrée de commande $u_k$.
+L'équation d'état est :
+
+$$x_{k|k-1} = F_k x_{k-1|k-1} + B_k u_k$$
+
+Avec :
+\begin{itemize}
+	\item Matrice de transition ($F$) : Basée sur un modèle cinématique newtonien.
+	\item Matrice de commande ($B$) : Intègre l'accélération dans le calcul de la position et de la vitesse.
+\end{itemize}
+
+$$F = \begin{bmatrix} 
+1 & 0 & \Delta t & 0 \\ 
+0 & 1 & 0 & \Delta t \\ 
+0 & 0 & 1 & 0 \\ 
+0 & 0 & 0 & 1 
+\end{bmatrix}, \quad 
+B = \begin{bmatrix} 
+\frac{1}{2}\Delta t^2 & 0 \\ 
+0 & \frac{1}{2}\Delta t^2 \\ 
+\Delta t & 0 \\ 
+0 & \Delta t 
+\end{bmatrix}$$
+
+Mise à jour de la covariance ($P$) :
+$$P_{k|k-1} = F P_{k-1|k-1} F^T + Q$$
+
+La matrice $Q$ (bruit de processus) définit la confiance accordée à l'IMU. Un capteur bruité (type MPU6050) nécessite une valeur $Q$ plus élevée pour indiquer au filtre que la prédiction est incertaine.
+
+Dès qu'on reçoit un scan BLE, on va corriger l'état. C'est une étape à basse fréquence car les signaux radio arrivent moins vite que les données de l'IMU.
+
+\begin{itemize}
+	\item Vecteur de mesure ($z_k$) : On remplit notre vecteur $z_k$ avec les distances calculées via le RSSI des 3 meilleures ancres.:
+	 $$z_k = \begin{bmatrix} d_{RSSI,1} \\ d_{RSSI,2} \\ d_{RSSI,3} \end{bmatrix}$$
+	\item Fonction de mesure non linéaire $h(x)$ (la distance théorique) : On évalue la distance euclidienne entre notre position estimée et la position réelle des ancres. :
+	 $$h_i(x_k) = \sqrt{(p_x - x_{Ai})^2 + (p_y - y_{Ai})^2}$$
+	\item Linéarisation via la Jacobienne ($H$) : Comme notre fonction $h(x)$ n'est pas linéaire, on va calculer la Jacobienne $H$ autour de notre état actuel pour pouvoir appliquer le filtre.
+	$$H = \frac{\partial h}{\partial x} = \begin{bmatrix} 
+\frac{p_x - x_{A1}}{d_1} & \frac{p_y - y_{A1}}{d_1} & 0 & 0 \\ 
+\vdots & \vdots & \vdots & \vdots 
+\end{bmatrix}$$
+	\item Correction finale : On ajuste notre état grâce au gain de Kalman $K$. :
+	$$x_{k|k} = x_{k|k-1} + K (z_k - h(x_{k|k-1}))$$
+
+\end{itemize}
+
+
+\subsection{Communication et visualisation du résultat sur PC}
+
+Pour suivre et analyser le déplacement du robot en temps réel, il faut établir une communication entre l'unité embarquée et le PC.  Deux approches sont envisagées selon le niveau de complexité et les outils souhaités
+
+La première approche repose sur une architecture MQTT (Message Queuing Telemetry Transport), solution la plus simple et la plus robuste pour l’IoT.
+Dans cette configuration, le robot publie sa position estimée sur un canal de communication spécifique, via une connexion Wi-Fi. Côté réception, un script Python s’exécute sur le PC pour récupérer les données du broker. La visualisation de la trajectoire du robot est ensuite assurée par Python.
+
+La seconde approche est celle du Micro-ROS. Étant donné la puissance de calcul de certains ESP32, une mise en œuvre plus avancée utilisant micro-ROS est pertinente. Grâce à cette approche, l’ESP32 n’est plus un simple capteur externe : il est reconnu par l'ordinateur comme un élément constitutif du système. Le principe repose sur la publication directe de messages standardisés par le robot.
+
+L’avantage majeur de cette solution est l’accès à RViz2, l’outil de visualisation professionnel de l’écosystème ROS qui permet de visualiser graphiquement la position et l’orientation du robot mais aussi de mesurer la fiabilité des mesures. Pour assurer cette communication, Micro-ROS s’appuie sur un transport UDP sur Wi-Fi, un protocole parfaitement géré par les capacités réseaux de l’ESP32.
+
+\subsection{Limite de la solution trilatération BLE + IMU}
+
+Les performances globales restent limitées par la physique du signal radio. Le RSSI étant extrêmement sensible aux phénomènes d’évanouissement du signal et aux réflexions cela pourrait générer des erreurs de positionnement brutales. Bien que l’IMU permet de lisser ces erreurs et d'assurer une continuité dans la trajectoire, elle ne peut pas les corriger totalement.
+En conséquence, la précision absolue de ce système se situera probablement dans une fourchette de 1 à 2 mètres.
+
+\section{Bibliographie}
+
+\printbibliography
+\end{document}
