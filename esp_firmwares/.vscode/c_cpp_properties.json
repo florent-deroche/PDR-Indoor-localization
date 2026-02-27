@@ -10,6 +10,7 @@
             "includePath": [
                 "C:/Users/lois5/Documents/PC LOIS GOON/projet/PDR/PDR-Indoor-localization/esp_firmwares/include",
                 "C:/Users/lois5/Documents/PC LOIS GOON/projet/PDR/PDR-Indoor-localization/esp_firmwares/src",
+                "C:/Users/lois5/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src",
                 "C:/Users/lois5/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/newlib/platform_include",
                 "C:/Users/lois5/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include",
                 "C:/Users/lois5/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/esp_additions/freertos",
@@ -208,7 +209,6 @@
                 "C:/Users/lois5/.platformio/packages/framework-arduinoespressif32/variants/esp32",
                 "C:/Users/lois5/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src",
                 "C:/Users/lois5/.platformio/packages/framework-arduinoespressif32/libraries/AsyncUDP/src",
-                "C:/Users/lois5/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src",
                 "C:/Users/lois5/.platformio/packages/framework-arduinoespressif32/libraries/BluetoothSerial/src",
                 "C:/Users/lois5/.platformio/packages/framework-arduinoespressif32/libraries/DNSServer/src",
                 "C:/Users/lois5/.platformio/packages/framework-arduinoespressif32/libraries/EEPROM/src",
@@ -246,6 +246,7 @@
                 "path": [
                     "C:/Users/lois5/Documents/PC LOIS GOON/projet/PDR/PDR-Indoor-localization/esp_firmwares/include",
                     "C:/Users/lois5/Documents/PC LOIS GOON/projet/PDR/PDR-Indoor-localization/esp_firmwares/src",
+                    "C:/Users/lois5/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src",
                     "C:/Users/lois5/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/newlib/platform_include",
                     "C:/Users/lois5/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include",
                     "C:/Users/lois5/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/esp_additions/freertos",
@@ -444,7 +445,6 @@
                     "C:/Users/lois5/.platformio/packages/framework-arduinoespressif32/variants/esp32",
                     "C:/Users/lois5/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src",
                     "C:/Users/lois5/.platformio/packages/framework-arduinoespressif32/libraries/AsyncUDP/src",
-                    "C:/Users/lois5/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src",
                     "C:/Users/lois5/.platformio/packages/framework-arduinoespressif32/libraries/BluetoothSerial/src",
                     "C:/Users/lois5/.platformio/packages/framework-arduinoespressif32/libraries/DNSServer/src",
                     "C:/Users/lois5/.platformio/packages/framework-arduinoespressif32/libraries/EEPROM/src",
