@@ -13,6 +13,6 @@
 
 // MQTT config
 #define mqtt_port 1883
-#define mqtt_server "10.36.126.210"
+#define mqtt_server "10.95.240.210"
 
 #endif  
