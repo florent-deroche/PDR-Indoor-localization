@@ -3,6 +3,7 @@
 #include <BLEUtils.h>
 #include <BLEServer.h>
 #include "shared_config.h"
+#include "esp_bt.h"
 
 /*
 Warning, change this ANCHOR_ID to 1, 2 or 3 depending on the anchor you are flashing the firmware in.
@@ -31,12 +32,15 @@ void setup() {
     // UUID Generic service 
     pAdvertising->addServiceUUID(BLEUUID((uint16_t)0x1801));
 
-    // signal power and visibility 
+    // signal full power and visibility 
     pAdvertising->setScanResponse(true);
-    pAdvertising->setMinPreferred(0x06); // usual config 
-
-    
-
+ 
+    esp_ble_tx_power_set(ESP_BLE_PWR_TYPE_ADV, ESP_PWR_LVL_P9);
+    esp_ble_tx_power_set(ESP_BLE_PWR_TYPE_DEFAULT, ESP_PWR_LVL_P9);
+   
+    // short bluetooth interval advertising config 
+    pAdvertising->setMinInterval(0x80); 
+    pAdvertising->setMaxInterval(0xA0);
     // BLE emition start 
     BLEDevice::startAdvertising(); 
 

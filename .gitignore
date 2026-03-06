@@ -1,2 +1,4 @@
 # output en .pdf ignoré
 *.pdf
+*.pio
+*.vscode

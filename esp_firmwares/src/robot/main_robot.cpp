@@ -22,7 +22,7 @@ int rssi_anchor_1 = -100;
 int rssi_anchor_2 = -100;
 int rssi_anchor_3 = -100; 
 
-const int SCAN_TIME = 500; // in milliseconds
+const int SCAN_TIME = 200; // in milliseconds
 
 // automatically called function when a BLE device is detected (Callback function)
 
@@ -90,8 +90,8 @@ void setup() {
     pBLEScan = BLEDevice::getScan();
     pBLEScan->setAdvertisedDeviceCallbacks(new DetectedDeviceCallbacks);
     pBLEScan->setActiveScan(true);
-    pBLEScan->setInterval(100); 
-    pBLEScan->setWindow(99); 
+    pBLEScan->setInterval(200); 
+    pBLEScan->setWindow(199); 
 
 
 }
@@ -105,7 +105,7 @@ void loop() {
     mqttClient.loop();
 
 
-    // BLE scan launching at 500 ms
+    // BLE scan launching at 100 ms
     Serial.printf("Scanning BLE (%dms)...", SCAN_TIME);
     pBLEScan->start(0,nullptr,false);
     delay(SCAN_TIME); 
