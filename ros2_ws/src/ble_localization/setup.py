@@ -15,8 +15,8 @@ setup(
     zip_safe=True,
     maintainer='loisgoon',
     maintainer_email='loisgonce.pro@gmail.com',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    description='BLE Trilateration to estimate position (MQTT)',
+    license='Apache-2.0',
     extras_require={
         'test': [
             'pytest',

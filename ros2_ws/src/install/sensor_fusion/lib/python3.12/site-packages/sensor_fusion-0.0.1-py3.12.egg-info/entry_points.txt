@@ -1,0 +1,2 @@
+[console_scripts]
+fusion_node = sensor_fusion.fusion_node:main

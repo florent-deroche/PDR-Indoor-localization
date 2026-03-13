@@ -1,0 +1,2 @@
+[console_scripts]
+trilateration_node = ble_localization.trilateration_node:main
