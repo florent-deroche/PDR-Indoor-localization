@@ -8,11 +8,11 @@
 #define ANCHOR_3_NAME "ESP32_Anchor_ID:3"
 
 // wifi and mqtt config
-#define ssid "Netsphere_Terminal"
-#define password "goon1234"
+#define ssid "IoT IMT Nord Europe"
+#define password "72Hin@R*"
 
 // MQTT config
 #define mqtt_port 1883
-#define mqtt_server "10.95.240.210"
+#define mqtt_server "10.120.2.235"
 
 #endif  

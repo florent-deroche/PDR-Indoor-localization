@@ -2,7 +2,7 @@ import paho.mqtt.client as mqtt
 import json
 
 
-IP_ADRESS   = '10.95.240.210'
+IP_ADRESS   = '10.120.2.235'
 PORT        = 1883
 TOPIC       = "PDR/robot/rssi"
 

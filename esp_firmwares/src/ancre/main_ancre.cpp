@@ -9,7 +9,7 @@
 Warning, change this ANCHOR_ID to 1, 2 or 3 depending on the anchor you are flashing the firmware in.
 Each Anchor must have a different Anchor Id
 */
-#define ANCHOR_ID 3
+#define ANCHOR_ID 1
 
 #define BLUE_LED 2
 

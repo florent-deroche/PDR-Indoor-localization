@@ -1,5 +1,24 @@
 # output en .pdf ignoré
-*.pdf
-*.pio
-*.vscode/
-*.venv/
+# --- ROS 2 ---
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
+# --- Python ---
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# --- PlatformIO (ESP32) ---
+.pio/
+.vscode/
+
+# --- Windows / Système ---
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# --- MQTT / Logs locaux ---
+*.log

@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>localisation_pkg</name>
+  <name>ble_localization</name>
   <version>0.0.0</version>
-  <description>Indoor localisation without gnss using bluetooth trilateration</description>
+  <description>TODO: Package description</description>
   <maintainer email="loisgonce.pro@gmail.com">loisgoon</maintainer>
-  <license>Apache License 2.0</license>
+  <license>TODO: License declaration</license>
 
   <depend>rclpy</depend>
   <depend>std_msgs</depend>

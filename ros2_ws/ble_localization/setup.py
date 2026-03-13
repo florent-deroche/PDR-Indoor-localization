@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'localisation_pkg'
+package_name = 'ble_localization'
 
 setup(
     name=package_name,
@@ -15,8 +15,8 @@ setup(
     zip_safe=True,
     maintainer='loisgoon',
     maintainer_email='loisgonce.pro@gmail.com',
-    description='Indoor localisation with BLE trilateration without GNSS signals ',
-    license='Apache License 2.0',
+    description='TODO: Package description',
+    license='TODO: License declaration',
     extras_require={
         'test': [
             'pytest',
@@ -24,6 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'trilateration_node = ble_localization.trilateration_node:main',
         ],
     },
 )
