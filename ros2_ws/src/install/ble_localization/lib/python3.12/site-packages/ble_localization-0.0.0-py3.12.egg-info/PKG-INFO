@@ -1,8 +1,0 @@
-Metadata-Version: 2.1
-Name: ble-localization
-Version: 0.0.0
-Summary: BLE Trilateration to estimate position (MQTT)
-Maintainer: loisgoon
-Maintainer-email: loisgonce.pro@gmail.com
-License: Apache-2.0
-Provides-Extra: test

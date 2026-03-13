@@ -1,7 +1,0 @@
-Metadata-Version: 2.1
-Name: sensor-fusion
-Version: 0.0.1
-Summary: Sensor Fusion with 2D Kalman Filter of wheel odometry and BLE trilateration
-Maintainer: Lois
-Maintainer-email: loisgonce.pro@gmail.com
-License: Apache-2.0
