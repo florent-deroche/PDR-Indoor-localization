@@ -6,7 +6,7 @@ import time
 from scipy.optimize import least_squares
 
 # --- CONFIGURATION ---
-IP_ADRESS   = '10.120.2.235'
+IP_ADRESS   = '10.120.2.231'
 PORT        = 1883
 TOPIC       = "PDR/robot/rssi"
 DUREE_TEST  = 30 # Secondes d'enregistrement

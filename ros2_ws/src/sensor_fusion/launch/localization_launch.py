@@ -3,7 +3,17 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     return LaunchDescription([
-        # 1. Le nœud qui écoute le MQTT et fait la trilatération
+        
+        
+        Node(
+            package='tf2_ros',
+            executable='static_transform_publisher',
+            name='ble_origin_broadcaster',
+            # [X, Y, Z, Yaw, Pitch, Roll, Parent(SLAM), Enfant(BLE)]
+            # il faut démarrer le robot sur l'origine de notre repère
+            arguments=['0', '0', '0.0', '0.0', '0.0', '0.0', 'map', 'ble_origin']
+        ),
+        
         Node(
             package='ble_localization',
             executable='trilateration_node',
@@ -11,7 +21,6 @@ def generate_launch_description():
             output='screen'
         ),
         
-        # 2. Le nœud qui fusionne le BLE et l'Odométrie avec Kalman
         Node(
             package='sensor_fusion',
             executable='fusion_node',
