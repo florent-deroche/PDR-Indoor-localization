@@ -11,7 +11,7 @@ def generate_launch_description():
             name='ble_origin_broadcaster',
             # [X, Y, Z, Yaw, Pitch, Roll, Parent(SLAM), Enfant(BLE)]
             # il faut démarrer le robot sur l'origine de notre repère
-            arguments=['0', '0', '0.0', '0.0', '0.0', '0.0', 'map', 'ble_origin']
+            arguments=['0', '0', '0.0', '0.0', '0.0', '0.0', 'odom', 'ble_origin']
         ),
         
         Node(
