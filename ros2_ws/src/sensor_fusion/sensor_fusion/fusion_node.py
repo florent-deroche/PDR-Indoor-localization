@@ -161,7 +161,7 @@ class KalmanFusionNode(Node):
         t.transform.rotation.z = q_offset['z']
         t.transform.rotation.w = q_offset['w']
 
-        self.tf_broadcaster.sendTransform(t)
+        #self.tf_broadcaster.sendTransform(t)
 
 def main(args=None):
     rclpy.init(args=args)
