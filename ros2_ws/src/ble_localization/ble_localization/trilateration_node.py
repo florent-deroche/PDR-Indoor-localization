@@ -5,9 +5,10 @@ import paho.mqtt.client as mqtt
 import json
 import math
 from scipy.optimize import least_squares
+from collections import deque 
 
 # --- CONFIG ---
-IP_ADRESS   = '10.120.2.231' 
+IP_ADRESS   = '10.120.2.231' # hostname -I 
 PORT        = 1883
 TOPIC       = 'PDR/robot/rssi'
 
@@ -19,37 +20,22 @@ ANCHORS_POS = {
 }
 
 # Signal propagation model constants 
-A_CONST = -40 
-N_CONST = 3.8   
+A_CONST = -40 # dB 1 meter 
+N_CONST = 3.8  # Reflection Param      
 
-class KalmanFilter1D:
-    def __init__(self, q, r, p, initial_value):
-        self.q = q
-        self.r = r
-        self.p = p
-        self.x = initial_value
 
-    def process(self, measurement, is_valid):
-        self.p = self.p + self.q
-        if is_valid:
-            k = self.p / (self.p + self.r)
-            self.x = self.x + k * (measurement - self.x)
-            self.p = (1 - k) * self.p
-        return self.x
 
 class TrilaterationNode(Node):
     def __init__(self):
+        self.previous_rssi_historic = deque(maxlen=50)
         super().__init__('ble_trilateration_node')
         
         self.position_publisher = self.create_publisher(PoseWithCovarianceStamped, 'ble_estimated_position', 10)
         
-        self.filtres_ancres = {
-            'Anchor_1': KalmanFilter1D(q=0.05, r=25.0, p=1.0, initial_value=-60.0),
-            'Anchor_2': KalmanFilter1D(q=0.05, r=25.0, p=1.0, initial_value=-60.0),
-            'Anchor_3': KalmanFilter1D(q=0.05, r=25.0, p=1.0, initial_value=-60.0)
-        }
+        
+        
 
-       
+        # lire les msg mqtt
         self.mqtt_client = mqtt.Client()
         
         self.mqtt_client.on_connect = self.on_mqtt_connect
@@ -74,11 +60,22 @@ class TrilaterationNode(Node):
             donnees = json.loads(msg.payload.decode('utf-8'))
             distances = {}
             
+            
             for ancre, rssi in donnees.items():
+                
+                
                 mesure_valide = (rssi != -100)
-                rssi_filtre = self.filtres_ancres[ancre].process(measurement=rssi, is_valid=mesure_valide)
+                if mesure_valide:
+                    rssi_filtre = rssi
+                else:
+                    rssi_filtre = self.filter_list(ancre) # TO IMPLEMENT : update rssi to avoid -100 dB value (msg not caught)
+                
+                # log path distance model 
                 distances[ancre] = 10 ** ((A_CONST - rssi_filtre) / (10 * N_CONST))
 
+            self.previous_rssi_historic.append(donnees.copy())
+            
+            # coordinate calculation
             x, y = self.calculate_position(distances)
             
             pose_msg = PoseWithCovarianceStamped()
@@ -98,6 +95,18 @@ class TrilaterationNode(Node):
         except Exception as e:
             self.get_logger().error(f"Error processing MQTT message: {e}")
 
+    def filter_list(self, ancre):
+        # On parcourt l'historique du plus récent au plus ancien
+        for donnees_historique in reversed(self.previous_rssi_historic):
+            if ancre in donnees_historique:
+                rssi_precedent = donnees_historique[ancre]
+                if rssi_precedent != -100:
+                    return rssi_precedent
+        
+        # Sécurité : si l'historique est vide ou ne contient que des -100
+        self.get_logger().warn(f"Aucun historique valide pour {ancre}, utilisation d'une valeur par défaut.")
+        return -60 # Valeur d'un signal très lointain pour ne pas faire crasher les maths
+    
     def error_function(self, guess, anchors, distances):
         errors = []
         for (ax, ay), d in zip(anchors, distances):
@@ -114,15 +123,12 @@ class TrilaterationNode(Node):
                 anchors_list.append(ANCHORS_POS[ancre])
                 distances_list.append(dist)
         
-        initial_guess = [1.0, 0.5] 
+        initial_guess = [1.0, 0.5] # mettre centre de la pièce ? 
         result = least_squares(self.error_function, initial_guess, args=(anchors_list, distances_list))
         
         x_brut = result.x[0]
-        y_brut = result.x[1]
-        
-        
-        
-        return float(x_brut, float(y_brut))
+        y_brut = result.x[1]    
+        return float(x_brut), float(y_brut)
 
 def main():
     rclpy.init()
