@@ -131,11 +131,11 @@ La LED bleue clignote à 1 Hz quand l'ancre émet correctement.
 
 Coordonnées à partir de l'origine (point 0 marqué au sol, robot face à X) :
 
-| Ancre | Nom BLE | X (m) | Y (m) |
+| Ancre | Nom BLE | X (m) | Y (m) | Z (m) |
 |---|---|---|---|
-| Anchor_1 | ESP32_Anchor_ID:1 | 2.36 | 5.92 |
-| Anchor_2 | ESP32_Anchor_ID:2 | 9.94 | 0.25 |
-| Anchor_3 | ESP32_Anchor_ID:3 | 0.60 | 1.50 |
+| Anchor_1 | ESP32_Anchor_ID:1 | 2.36 | 5.92 | 1.08 |
+| Anchor_2 | ESP32_Anchor_ID:2 | 9.94 | 0.25 | 0.89 |
+| Anchor_3 | ESP32_Anchor_ID:3 | 0.60 | 1.50 | 1.1  |
 
 Fixez les ancres de manière rigide. Tout déplacement après calibration invalide les mesures.
 
