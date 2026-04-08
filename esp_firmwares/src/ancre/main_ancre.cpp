@@ -1,4 +1,4 @@
-#include <Arduino.h>
+##include <Arduino.h>
 #include <BLEDevice.h>
 #include <BLEUtils.h>
 #include <BLEServer.h>
@@ -9,7 +9,7 @@
 Warning, change this ANCHOR_ID to 1, 2 or 3 depending on the anchor you are flashing the firmware in.
 Each Anchor must have a different Anchor Id
 */
-#define ANCHOR_ID 1
+#define ANCHOR_ID 2
 
 #define BLUE_LED 2
 
@@ -35,12 +35,13 @@ void setup() {
     // signal full power and visibility 
     pAdvertising->setScanResponse(true);
  
-    esp_ble_tx_power_set(ESP_BLE_PWR_TYPE_ADV, ESP_PWR_LVL_P9);
-    esp_ble_tx_power_set(ESP_BLE_PWR_TYPE_DEFAULT, ESP_PWR_LVL_P9);
+    // Standart signal power so the BLE doesn't bounce a lot on walls 
+    esp_ble_tx_power_set(ESP_BLE_PWR_TYPE_ADV, ESP_PWR_LVL_P3);
+    esp_ble_tx_power_set(ESP_BLE_PWR_TYPE_DEFAULT, ESP_PWR_LVL_P3); // +3dbm
    
-    // short bluetooth interval advertising config 
-    pAdvertising->setMinInterval(0x80); 
-    pAdvertising->setMaxInterval(0xA0);
+    // 100ms 
+    pAdvertising->setMinInterval(0x90); 
+    pAdvertising->setMaxInterval(0xB0);
     // BLE emition start 
     BLEDevice::startAdvertising(); 
 
