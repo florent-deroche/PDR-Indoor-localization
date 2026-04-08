@@ -9,8 +9,8 @@ def generate_launch_description():
             package='tf2_ros',
             executable='static_transform_publisher',
             name='ble_origin_broadcaster',
-            # [X, Y, Z, Yaw, Pitch, Roll, Parent(SLAM), Enfant(BLE)]
-            # il faut démarrer le robot sur l'origine de notre repère
+            # [X, Y, Z, Yaw, Pitch, Roll, Parent(SLAM), child(BLE)]
+            # One must start the robot on the origin of the map 
             arguments=['0', '0', '0.0', '0.0', '0.0', '0.0', 'odom', 'ble_origin']
         ),
         
