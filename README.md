@@ -395,7 +395,7 @@ rviz2
 | PoseWithCovarianceStamped | `/ble_estimated_position` | Bleu — BLE brut |
 | PoseStamped | `/fused_pose` | Vert — Kalman BLE+odom |
 | Pose SLAM | topic selon votre SLAM | Rouge — référence |
-| TF | — | Optionnel, debug |
+| TF | 'base_footprint' | Compaer avec le slam, debug |
 
 Les trois poses s'affichent toutes dans le repère `map` sans conflit,
 permettant une comparaison directe SLAM vs BLE fusionné.
