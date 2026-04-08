@@ -8,11 +8,11 @@
 #define ANCHOR_3_NAME "ESP32_Anchor_ID:3"
 
 // wifi and mqtt config
-#define ssid "IoT IMT Nord Europe"
-#define password "72Hin@R*"
+#define ssid "YOUR_WIFI_NAME"
+#define password "YOUR_PASSWORD"
 
 // MQTT config
 #define mqtt_port 1883
-#define mqtt_server "10.120.2.235"
+#define mqtt_server "YOUR_PC_IP" // Use hostname -I on ubuntu to know it 
 
 #endif  
