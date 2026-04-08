@@ -28,14 +28,13 @@ class KalmanFusionNode(Node):
         self.theta_offset = 0.0 
         self.current_yaw = 0.0 
 
-        # Filtre de Kalman (X, Y)
+        # Kalman Filter (X, Y)
         self.X = np.zeros((2, 1))
         self.P = np.eye(2) * 4.0
         self.Q = np.eye(2) * 0.005
         self.R = np.eye(2) * 25
 
-        # Flag d'initialisation : remplace le test ambigu (X==0 and Y==0)
-        # qui bloquait l'init si le robot démarrait exactement à l'origine BLE
+        # Initialisation flag 
         self.is_initialized = False
 
         self.timer = self.create_timer(0.1, self.prediction_step)
@@ -75,7 +74,7 @@ class KalmanFusionNode(Node):
             dx_global = dx_odom * math.cos(self.theta_offset) - dy_odom * math.sin(self.theta_offset)
             dy_global = dx_odom * math.sin(self.theta_offset) + dy_odom * math.cos(self.theta_offset)
 
-            # Prédiction Kalman
+            # Kalman Prediction 
             self.X[0, 0] += dx_global
             self.X[1, 0] += dy_global
             self.P = self.P + self.Q
@@ -92,15 +91,16 @@ class KalmanFusionNode(Node):
         ble_x = msg.pose.pose.position.x
         ble_y = msg.pose.pose.position.y
 
-        # Initialisation propre à la première mesure BLE valide
+        
+        # Clean Init at the first valid BLE Measure
         if not self.is_initialized:
-            self.X[0, 0] = 0 #on démarre en 0 
+            self.X[0, 0] = 0 # we start in (0,O)
             self.X[1, 0] = 0
             self.is_initialized = True
             self.get_logger().info(f"Kalman initialisé à la position BLE : ({ble_x:.2f}, {ble_y:.2f})")
             return
 
-        # Mise à jour Kalman
+        # Kalman Update 
         Z = np.array([[ble_x], [ble_y]])
         Y = Z - self.X
         S = self.P + self.R
@@ -114,7 +114,8 @@ class KalmanFusionNode(Node):
         now = self.get_clock().now().to_msg()
         q_yaw = self.get_quaternion_from_yaw(self.current_yaw)
 
-        # Publication de fused_pose dans ble_origin (= map grâce à la TF statique du launch)
+        
+        # Publishing fused_pose in ble_origin (equals to map thanks to static tf in launch file)
         pose_msg = PoseStamped()
         pose_msg.header.stamp = now
         pose_msg.header.frame_id = 'ble_origin' 
@@ -127,9 +128,8 @@ class KalmanFusionNode(Node):
         pose_msg.pose.orientation.w = q_yaw['w']
         self.publisher.publish(pose_msg)
 
-        # TF ble_origin → odom : laissée commentée car SLAM tourne en parallèle.
-        # SLAM est le seul propriétaire de la chaîne map → odom → base_footprint.
-        # Décommenter uniquement si vous utilisez ce système sans SLAM.
+        
+        
         t = TransformStamped()
         t.header.stamp = now
         t.header.frame_id = 'ble_origin'
@@ -144,7 +144,7 @@ class KalmanFusionNode(Node):
         t.transform.rotation.y = q_offset['y']
         t.transform.rotation.z = q_offset['z']
         t.transform.rotation.w = q_offset['w']
-        #self.tf_broadcaster.sendTransform(t)
+        #self.tf_broadcaster.sendTransform(t) --> commented so our system doesn't override slam's calculations 
 
 
 def main(args=None):
