@@ -12,7 +12,7 @@ IP_ADRESS   = '10.120.2.231'
 PORT        = 1883
 TOPIC       = 'PDR/robot/rssi'
  
-# Coordonnées des ancres (X, Y) en mètres
+# Anchor Coordinates (X, Y ,Z)
 ANCHORS_POS = {
     'Anchor_1': (2.36, 5.92, 0.88),
     'Anchor_2': (9.94, 0.25, 1.30),
@@ -20,15 +20,14 @@ ANCHORS_POS = {
 }
 
 ROBOT_Z = 0.29
-# Modèle de propagation
-A_CONST = -45  # RSSI mesuré à 1 mètre (calibré)
-N_CONST = 2  # Exposant de perte — à calibrer empiriquement sur votre environnement
+# Signal Propagation parameters 
+A_CONST = -45  # 1 meter distance's RSSI 
+N_CONST = 2  # Measured manually
  
-# Filtre exponentiel par ancre (0 < alpha < 1)
-# 0.2 = lissage fort (recommandé en intérieur bruité)
+# EMA Filter Intensity
 EMA_ALPHA = 0.2
  
-# Nombre d'ancres minimum pour publier une position
+# Minimum Anchor number for position computing
 MIN_ANCHORS = 3
  
  
@@ -39,7 +38,8 @@ class TrilaterationNode(Node):
         
         self.position_publisher = self.create_publisher(PoseWithCovarianceStamped, 'ble_estimated_position', 10)
  
-        # Filtre EMA par ancre : stocke le RSSI lissé de chaque ancre indépendamment
+        
+        # EMA Filter for each anchor : stores smoothed RSSO for each anchor independently. 
         self.rssi_ema = {}
  
         self.mqtt_client = mqtt.Client()
@@ -64,7 +64,7 @@ class TrilaterationNode(Node):
             
             for ancre, rssi in donnees.items():
  
-                # Récupération d'un RSSI valide
+                # Getting Valid RSSI 
                 if rssi != -100:
                     rssi_brut = rssi
                 else:
@@ -73,7 +73,7 @@ class TrilaterationNode(Node):
                         self.get_logger().warn(f"Aucune donnée valide pour {ancre}, ancre ignorée.")
                         continue
  
-                # Filtre EMA : lisse le RSSI par ancre indépendamment
+                
                 if ancre not in self.rssi_ema:
                     self.rssi_ema[ancre] = float(rssi_brut)  # initialisation directe
                 else:
@@ -81,19 +81,19 @@ class TrilaterationNode(Node):
  
                 rssi_filtre = self.rssi_ema[ancre]
  
-                # Modèle log-distance → distance en mètres
+                # Log Path distance Model 
                 distances[ancre] = 10 ** ((A_CONST - rssi_filtre) / (10 * N_CONST))
  
             self.previous_rssi_historic.append(donnees.copy())
  
-            # Log de diagnostic (utile pour calibrer N_CONST)
+            # Diagnostic log 
             log_parts = [
                 f"{a}: {self.rssi_ema.get(a, '?'):.1f}dBm → {distances.get(a, '?'):.2f}m"
                 for a in donnees if a in distances
             ]
             self.get_logger().info(" | ".join(log_parts))
  
-            # On ne publie que si toutes les ancres sont visibles
+            # Publish only if all anchors are visible 
             if len(distances) < MIN_ANCHORS:
                 self.get_logger().warn(f"Seulement {len(distances)} ancre(s) visible(s), position non publiée.")
                 return
@@ -116,7 +116,7 @@ class TrilaterationNode(Node):
             self.get_logger().error(f"Erreur de traitement du message MQTT : {e}")
  
     def get_last_valid_rssi(self, ancre):
-        """Retourne le dernier RSSI valide (non -100) pour une ancre donnée."""
+        """Return latest valid RSSI measurelment for each anchor"""
         for donnees_historique in reversed(self.previous_rssi_historic):
             if ancre in donnees_historique and donnees_historique[ancre] != -100:
                 return float(donnees_historique[ancre])
@@ -138,8 +138,8 @@ class TrilaterationNode(Node):
                 anchors_list.append(ANCHORS_POS[ancre])
                 distances_list.append(dist)
  
-        # Initial guess = centroïde des ancres visibles
-        # Bien meilleur que (0,0) ou (1, 0.5) : évite les minima locaux de least_squares
+        # Initial guess = centroïd of visible anchors
+        # used to avoid local minimums of least squares resolution
         x0 = sum(a[0] for a in anchors_list) / len(anchors_list)
         y0 = sum(a[1] for a in anchors_list) / len(anchors_list)
         limites = ([-2.0, -2.0], [12.0, 8.0])
