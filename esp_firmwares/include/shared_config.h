@@ -13,6 +13,7 @@
 
 // MQTT config
 #define mqtt_port 1883
-#define mqtt_server "YOUR_PC_IP" // Use hostname -I on ubuntu to know it 
+#define mqtt_server "YOUR_PC_IP" 
+// Use hostname -I on ubuntu to know it 
 
 #endif  
